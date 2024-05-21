@@ -228,5 +228,11 @@ Nav Icons
     .only-screen {
         width: 60%;
 }
+.social-icon {
+    /* transform: scale(0.6); */
+    size: 19px;
+    padding: 0;
+    gap: 2px;
+}
 
 }

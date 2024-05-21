@@ -256,11 +256,34 @@ PopUp
 @media 600px
  */
 
- @media screen and (max-width: 600px) {
+ @media all and (max-width: 800px) {
   .pop-limit{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .pop-sec1 {
+    width: 100%;
+  }
+  .pop-sec2 {
+    width: 100%;
+  }
+ }
+
+ /* @media */
+
+ @media all and (max-width: 500px) {
+  .pop-limit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .pop-sec1 {
+    width: 100%;
+  }
+  .pop-sec2 {
+    width: 100%;
   }
  }

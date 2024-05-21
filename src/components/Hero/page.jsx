@@ -20,6 +20,9 @@ import { LoadingOverlay, Loader } from 'react-overlay-loader';
 import 'react-overlay-loader/styles.css';
 
 
+
+
+
 var $ = require("jquery");
 if (typeof window !== 'undefined') {
   window.$ = window.jQuery = require("jquery");
