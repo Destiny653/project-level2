@@ -1,0 +1,57 @@
+.container {
+    background-position: 0 -500px;
+    background-image: url('https://demo2.wpthemego.com/themes/sw_emarket/layout55/wp-content/uploads/2023/03/bg-2.jpg');
+    padding: 24px 15%;
+}
+.container::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    background-color: #00000011;
+    z-index: 0;
+}
+.sign-card {
+    background-color: #fcfcfc8f;
+    box-sizing: border-box;
+    padding: 30px 30px;
+    width: 100%;
+    border-radius: 30px;
+    z-index: 1;
+}
+.form {
+    width: 50%;
+}
+ .img-con {
+    width: 50%;
+    height: 100%;
+    margin-right: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.button {
+   width: 40%;
+}
+
+/* 
+===================================================
+screen sizing maxwith 900px
+===================================================
+ */
+
+ @media all and (max-width: 900px) {
+    .sign-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .form {
+        width: 100%;
+    }
+     .img-con {
+        width: 100%;
+    }
+ }
+
+ 
+ 

@@ -1,0 +1,80 @@
+.foot-icon {
+    background-color: rgb(255, 255, 255);
+}
+.foot-bg {
+    background-color: #0e111bf1;
+    background: linear-gradient(  #6d6b6b #0000003a);
+}
+.contact-btn {
+    display: none;
+}
+
+
+/* 
+  ======================================
+  screen sizing width (960px)
+  ======================================
+  */
+
+  @media screen and (max-width: 960px) {
+  
+
+.foot-sub-p{
+    display: flex;
+    flex-direction: column;
+}
+.contact-btn{
+    display: block;
+}
+.foot-contact {
+    display: none;
+}
+.foot-title{
+    font-size: 24px;
+    line-height: 30px;
+}
+
+
+  }
+
+  /* 
+  ======================================
+  screen sizing width (620px)
+  ======================================
+  */
+
+  @media screen and (max-width: 620px) {
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .foot-title{
+        font-size: 20px;
+        line-height: 30px;
+    }
+  }
+
+    /* 
+  ======================================
+  screen sizing width (620px)
+  ======================================
+  */
+
+  @media screen and (max-width: 620px) {
+    .foot-title {
+        font: 19px;
+    }
+  }
+
+    /* 
+  ======================================
+  screen sizing width (400px)
+  ======================================
+  */
+
+  @media screen and (max-width: 400px) {
+    .foot-title {
+        font: 10px;
+    }
+  }

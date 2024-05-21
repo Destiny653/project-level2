@@ -1,0 +1,7 @@
+.grid-span {
+    transform: translateY(8px);
+}
+
+.grid-i:hover .grid-span {
+    transform: translateY(-8px);
+}

@@ -1,0 +1,60 @@
+.container {
+    height: 80vh;
+    align-items: center;
+    /* position: relative; */
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://th.bing.com/th/id/OIP.K-3HQk0AcuoBd70tsubfJwHaFi?w=259&h=193&c=7&r=0&o=5&pid=1.7');
+    background-size: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+    margin: 0;
+   }
+   .container::after {
+      position: relative;
+      content: '';
+      z-index: 1;
+      background-color: black;
+      width: 100%;
+   }
+
+.button{
+    background-color:rgba(60, 138, 29, 0.979);
+    border: none;
+    width: 280px;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 9px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+ }
+ .signCard{
+    width: 400px;
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 9px;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border: 1px solid rgba(60, 138, 29, 0.979);
+ }
+ .profileImage{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    background-color:rgba(60, 138, 29, 0.979);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(60, 138, 29, 0.979);
+ }
