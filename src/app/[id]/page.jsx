@@ -26,7 +26,6 @@ export default async function page({ params }) {
     
     const { id } = params;
     const data = await newData(id)
-    const {handleAddToCart, store} = useContext(CartContext)
  
 
     return (
@@ -37,8 +36,8 @@ export default async function page({ params }) {
                         <img className=' w-full' src={data.img} alt='food' width='100%' height='100%' />
                     </section>
                     <section className=' relative top-14 w-7/12 ml-4 flex flex-col gap-6 '>
-                        <h1 className='text-3xl font-bold roboto '>{data.title}</h1>
-                        <p className='roboto text-base'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta repellat modi voluptatibus distinctio voluptatem rerum recusandae porro adipisci sapiente consequatur. Culpa voluptatem modi deleniti ab accusamus eligendi dolorum at enim!
+                        <h1 className='text-3xl font-bold nunitoextralight_italic '>{data.title}</h1>
+                        <p className='nunitoextralight_italic text-base'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta repellat modi voluptatibus distinctio voluptatem rerum recusandae porro adipisci sapiente consequatur. Culpa voluptatem modi deleniti ab accusamus eligendi dolorum at enim!
                             Lorem , quos quibusdam quis accusamus sint dolore provident facere dolores quam qui eum consequatur cum laudantium. Corrupti dolore velit omnis.
                         </p>
                         <h1>
@@ -49,13 +48,13 @@ export default async function page({ params }) {
                         </h1>
                         <h1 className='text-4xl font-bold text-orange-400 '>${data.price}</h1>
                         <div className='flex gap-5'>
-                            <button onClick={()=> handleAddToCart(data)} className='px-9 py-2 bg-lime-600 text-white text-base roboto font-semibold rounded-full '>ADD TO CART</button>
+                            <button  className='px-9 py-2 bg-lime-600 text-white text-base nunitoextralight_italic font-semibold rounded-full '>ADD TO CART</button>
                         </div>
                     </section>
                 </div>
                 <section className='flex justify-center items-center flex-col gap-4 py-9'>
-                    <h1 className='dancing text-3xl font-bold text-lime-500'>Todays Fresh</h1>
-                    <h1 className='roboto text-5xl font-extrabold text-center'>Related Products</h1>
+                    <h1 className='dancing_scriptregular text-3xl font-bold text-lime-500'>Todays Fresh</h1>
+                    <h1 className='nunitoextralight_italic text-5xl font-extrabold text-center'>Related Products</h1>
                     <ul className='flex items-center justify-center gap-6 m-10'>
                         <Items />
                     </ul>

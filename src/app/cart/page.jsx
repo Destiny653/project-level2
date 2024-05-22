@@ -52,16 +52,16 @@ export default function page() {
 
     return (
         <>
-            {isClient && <div className='flex w-full justify-center gap-7 m-10 ml-0 box-border px-10 '>
-                <table className='w-3/4 table1 '>
+            {isClient && <div className='cart-parent flex w-full justify-center gap-7 m-10 ml-0 box-border px-10 '>
+                <table className='w-3/4 cart-table table1 '>
                     <thead>
                         <tr>
                             <th className='text-left'>Image</th>
-                            <th className='text-left'>Product Name</th>
-                            <th className='text-left'>Unit Price</th>
+                            <th className='cart-title text-left'>Name</th>
+                            <th className='text-left'>UP</th>
                             <th className='text-left'>Quantity</th>
                             <th className='text-left'>Total</th>
-                            <th className='text-left'>Remove</th>
+                            <th className='text-left'>Remove</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -80,7 +80,7 @@ export default function page() {
                                         <td>
                                             <img className=' size-24 rounded-full cart-img ' src={info?.img} alt='product' />
                                         </td>
-                                        <td>{info?.title.slice(0, 15)}</td>
+                                        <td className='cart-title-name'>{info?.title.slice(0, 15)}</td>
                                         <td>{info?.price}</td>
                                         <td>
                                             <button className='px-3 py-1 bg-lime-600 rounded-full hover:bg-orange-500 ' onClick={() => { handleAddToCart(info, Add); }}>- </button>
@@ -94,13 +94,13 @@ export default function page() {
                                     </tr>
                                 )
                             }) :
-                            <h1 className=' m-auto text-4xl'>Your Cart is empty</h1>
+                            <h1 className=' m-auto text-2xl'>Your Cart is empty</h1>
                         }
                     </tbody>
                 </table>
 
 
-                <div className='w-1/5 box-border mr-4 '>
+                <div className='w-1/5 cart-sum box-border mr-4 '>
                     <table className='w-full h-96 border m-0 box-border p-5 '>
                         <thead>
                             <tr>

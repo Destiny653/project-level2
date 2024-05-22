@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { CartContext } from '../../../context/CartContext';
 import { ThemeContext } from '../../../context/ThemeContext';
 import Toggle from '../Toggle/page';
+import Link from 'next/link';
 
 export default function NavBar() {
 
@@ -32,14 +33,14 @@ export default function NavBar() {
 
 
     return (
-        <div className=' nav-bg'>
+        <div className='nunitoextralight_italic nav-bg'>
 
             <div className=" justify-center py-3 head-text ">
                 <p className=" text-xs text-center">GET 20% FOR ALL ORDERS IN THIS WEEK!</p>
             </div>
             <div className="input-parent flex justify-between my-3 mx-10 mt-5">
                 <Image className='logo-img'
-                    src="https://demo2.wpthemego.com/themes/sw_emarket/layout55/wp-content/uploads/2023/03/logo-home55.png"
+                    src="/img/icon-3.png"
                     alt="logo"
                     width={160}
                     height={40}
@@ -52,7 +53,7 @@ export default function NavBar() {
                     <input type="button" value="Search" className="home-input-btn-r text align-top h-12 w-3/12 " />
                 </div>
                 <ul className="icon-nav flex gap-2">
-                    <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><IoCartOutline /><span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-0 bg-red-600 text-white  '>{cartItems ? cartItems?.length : 0}</span></li>
+                    <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><Link href='/cart'><IoCartOutline /></Link><span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-0 bg-red-600 text-white  '>{cartItems ? cartItems?.length : 0}</span></li>
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90"><FaRegCircleUser /></li>
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90"><GrLanguage /></li>
                 </ul>

@@ -35,7 +35,7 @@ export default function Items() {
         <div className={`${selected} pop-parent relative`}>
           <div onClick={() => setSelected(false)} className='fixed pop-container flex justify-center items-center'>
             <div className='pop-content relative'>
-              <div onClick={() => setSelected(false)} className={`${selected} roboto close-pop absolute text-lg font-semibold`}>x</div>
+              <div onClick={() => setSelected(false)} className={`${selected} nunitoextralight_italicextralight_italic close-pop absolute text-lg font-semibold`}>x</div>
               <p className=' mb-5 text-center font-semibold text-xs text-green-600 '>Successfully added to cart</p>
               <div className='flex'>
                 <section className=' w-3/5 flex justify-center items-center gap-5 box-border overflow-hidden p-2 border-r-2 pl-4'>
@@ -49,15 +49,13 @@ export default function Items() {
                   </div>
                 </section>
                 <section className=' w-2/5 flex flex-col justify-center items-center gap-4'>
-                  <Link href='checkout' className='w-11/12'>
+                  <Link href='/checkout' className='w-11/12'>
                     <button className=' rounded-md font-semibold text-sm py-2 w-full  bg-lime-600 text-white active:bg-orange-500'>Checkout</button>
                   </Link>
-                  <h3 className=' text-xs'>Order Subtotal</h3>
-                  <h1 className='text-xl font-semibold '>${store}</h1>
-                  <Link className='w-11/12 ' href='./cart'>
-                    <button className='  rounded-md text-base w-full  bg-slate-100 py-2 roboto active:bg-orange-500' >View cart</button>
+                  <Link className='w-11/12 ' href='/cart'>
+                    <button className='  rounded-md text-base w-full  bg-slate-100 py-2 nunitoextralight_italicextralight_italic active:bg-orange-500' >View cart</button>
                   </Link>
-                  <button className='  rounded-md text-base w-11/12 roboto  py-2 bg-slate-100 active:bg-orange-500  ' onClick={() => setSelected(false)}>continue shoping</button>
+                  <button className='  rounded-md text-base w-11/12 nunitoextralight_italicextralight_italic  py-2 bg-slate-100 active:bg-orange-500  ' onClick={() => setSelected(false)}>continue shoping</button>
                 </section>
               </div>
             </div>
@@ -79,7 +77,7 @@ export default function Items() {
               <Link href={`/${item._id}`}>
                 <Image className=' ' src={item.img} alt='content image' width={500} height={500} />
               </Link>
-              <h1 className=' text-xs nunito font-normal ' style={{ color: 'gray' }}>{item.title.slice(0, 20).toUpperCase()}...</h1>
+              <h1 className=' text-xs nunitoextralight_italic font-normal ' style={{ color: 'gray' }}>{item.title.slice(0, 20).toUpperCase()}...</h1>
               <p className=' text-base font-normal'>{item.description}</p>
               <h1>
                 <FaStar color='gold' className='inline' />
@@ -88,7 +86,7 @@ export default function Items() {
                 <FaStar color='gold' className='inline' />
               </h1>
               <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
-              <button onClick={()=> {handleAddToCart(item); setIndexval(index); setSelected(true)}} className=' btn-bg text-sm  roboto font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
+              <button onClick={()=> {handleAddToCart(item); setIndexval(index); setSelected(true)}} className=' btn-bg text-sm  nunitoextralight_italicextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
               <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
               <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
               <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />

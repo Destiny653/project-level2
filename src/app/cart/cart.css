@@ -18,10 +18,64 @@ th {
     padding: 15px 0px;
     border-bottom: 1px solid grey;
 }
-table{
+
+table {
     border-collapse: separate;
     border-spacing: 0 0;
 }
+
 .cart-img {
     box-shadow: 0px 2px 2px greenyellow;
+}
+
+
+/* 
+============================================
+@media 855px
+============================================
+ */
+
+@media all and (max-width:855px) {
+
+    .cart-parent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-table {
+        width: 100%;
+    }
+
+    .cart-sum {
+        width: 60%;
+    }
+
+}
+
+/* 
+============================================
+@media 620px
+============================================
+*/
+
+
+@media all and (max-width:620px) {
+
+    .cart-title-name,
+    .cart-title {
+        display: none;
+    }
+}
+
+/* 
+============================================
+@media 550px
+============================================
+*/
+
+
+@media all and (max-width:550px) {
+    .cart-sum {
+        width: 100%;
+    }
 }

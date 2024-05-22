@@ -25,7 +25,7 @@ export default function Toggle() {
     ]
 
     return (
-        <div className={`absolute only-screen ${change} roboto`}>
+        <div className={`absolute only-screen ${change} nunitoextralight_italic`}>
             <button onClick={() => setChange(false)} className='text-2xl bg-red-600 close absolute'>x</button>
             <div className='flex justify-center items-center cursor-pointer bg-white h-12 '><h1 onClick={() => setVertical(true)} className=' text-black w-2/4 box-border h-full pt-3 pl-5 cursor-pointer '>Primary Menu</h1><h1 onClick={() => setVertical(false)} className=' text-black box-border w-2/4 pl-5 bg-slate-200 pt-3 h-full cursor-pointer'>Vertival Menu</h1></div>
             {

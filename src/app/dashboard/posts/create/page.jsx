@@ -11,6 +11,7 @@ import Link from 'next/link'
 import './create.css'
 import { ThemeContext } from '../../../../../context/ThemeContext'
 import { Loader, LoadingOverlay } from 'react-overlay-loader'
+import 'react-overlay-loader/styles.css';
 
 const page = () => {
 
@@ -123,7 +124,7 @@ const page = () => {
                             </div>
                             <div className=' mb-6 flex flex-col'>
                                 <label htmlFor="text" className=' pb-1'>
-                                    Rating
+                                    Price
                                 </label>
                                 <input type="number" value={price} name='text' placeholder='Enter price' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setPrice(e.target.value)} required />
                             </div>

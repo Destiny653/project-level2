@@ -68,6 +68,10 @@ Nav Icons
 .only-screen {
     display: none;
 }
+.logo-img{
+    height: 50px;
+    width: 100px;
+}
 
 /* 
   ======================================
@@ -108,10 +112,7 @@ Nav Icons
         border-radius: 20px;
         min-height: fit-content;
      }
-
-      .logo-img {
-        display: none;
-    }
+ 
      .img-1 {
         width: 58%;
         max-height: min-content;
@@ -194,13 +195,18 @@ Nav Icons
 
   @media screen and (max-width: 700px) {
 
-    .search-section, 
-    .logo-img {
+    .search-section {
         display: none;
     }
     .icon-nav {
         margin: auto;
     }
+    .input-parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
   }
 
 
@@ -227,7 +233,7 @@ Nav Icons
 
     .only-screen {
         width: 60%;
-}
+} 
 .social-icon {
     /* transform: scale(0.6); */
     size: 19px;

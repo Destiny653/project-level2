@@ -9,6 +9,8 @@ import { useRouter } from 'next/navigation'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'
 import '../homepage.css'
+import { Loader, LoadingOverlay } from 'react-overlay-loader'
+import 'react-overlay-loader/styles.css';
 
 const page = () => {
 
@@ -17,6 +19,8 @@ const page = () => {
     const { mode } = useContext(ThemeContext)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
+
 
 
     const { data: session } = useSession()
@@ -30,7 +34,7 @@ const page = () => {
                     <div className='profileImage'>
                         <Image src={session.user.image} alt='user image' className='image' fill={true} />
                     </div>
-                    Signed in as {session.user.email} <br /> {" "}
+                    <h1 className='text-white '>Signed in as {session.user.email}</h1> <br /> {" "}
                     <button className='button' onClick={() => signOut("google")}>Sign out</button>{" "}
                 </div>
             </>
@@ -59,7 +63,7 @@ const page = () => {
             if (res.status === 200) {
                 navigation.push("/");
                 notyf.success('Successfully logged in')
-            }else {
+            } else {
                 notyf.error('User not found')
             }
         } catch (error) {
@@ -71,31 +75,35 @@ const page = () => {
 
     return (
         <>
-            <div className='container' style={{backgroundColor: 'red'}}>
-                <div className='signCard' style={mode == 'light' ? { color: 'black' } : { color: 'black' }}>
-                    <form onSubmit={handleSubmit}>
-                        <div className=' mb-3 flex flex-col'>
-                            <h1 className=' text-3xl m-auto'>Sign in</h1>
-                            <label htmlFor="email" className=' pb-1'>
-                                Email
-                            </label>
-                            <input type="email" value={email} name='email' placeholder='Enter email...' className=' rounded-none form-control py-2 px-4 border' onChange={e => setEmail(e.target.value)} required />
-                        </div>
-                        <div className=' mb-6 flex flex-col'>
-                            <label htmlFor="password" className=' pb-1'>
-                                Password
-                            </label>
-                            <input type="password" value={password} name='password' placeholder='*******' className=' rounded-none form-control py-2 px-4 border' onChange={e => setPassword(e.target.value)} required />
-                        </div>
-                        <button className='button  border  bg-slate-200 rounded-none ' type='submit'>
-                            Login
-                        </button>
-                    </form>
-                    <h1 className=' text-2xl'>--or--</h1>
+            <LoadingOverlay >
+                <Loader loading={loading} />
 
-                    <button className='button' onClick={() => signIn("google")}>Sign in with <FcGoogle size={30} /> </button>
+                <div className='container' style={{ backgroundColor: 'red' }}>
+                    <div className='signCard' style={mode == 'light' ? { color: 'black' } : { color: 'black' }}>
+                        <form onSubmit={handleSubmit}>
+                            <div className=' mb-3 flex flex-col'>
+                                <h1 className=' text-3xl m-auto'>Sign in</h1>
+                                <label htmlFor="email" className=' pb-1'>
+                                    Email
+                                </label>
+                                <input type="email" value={email} name='email' placeholder='Enter email...' className=' rounded-none form-control py-2 px-4 border' onChange={e => setEmail(e.target.value)} required />
+                            </div>
+                            <div className=' mb-6 flex flex-col'>
+                                <label htmlFor="password" className=' pb-1'>
+                                    Password
+                                </label>
+                                <input type="password" value={password} name='password' placeholder='*******' className=' rounded-none form-control py-2 px-4 border' onChange={e => setPassword(e.target.value)} required />
+                            </div>
+                            <button className='button  border  bg-slate-200 rounded-none ' type='submit'>
+                                Login
+                            </button>
+                        </form>
+                        <h1 className=' text-2xl'>--or--</h1>
+
+                        <button className='button' onClick={() => {signIn("google"); setLoading(true) }}>Sign in with <FcGoogle size={30} /> </button>
+                    </div>
                 </div>
-            </div>
+            </LoadingOverlay>
         </>
     )
 }
