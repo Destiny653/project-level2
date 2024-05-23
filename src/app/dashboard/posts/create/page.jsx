@@ -29,8 +29,8 @@ const Page = () => {
         }
     });
 
-        const { data: session } = useSession()
-        console.log(session)
+
+        const { data: session  } = useSession()
  
 
 
