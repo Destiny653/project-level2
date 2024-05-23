@@ -24,8 +24,8 @@ const Contact = () => {
         const name = e.target.name.value
         form.current.value = ""
         console.log(name);
-        emailjs.sendForm('service_yok3ejb', 'template_njb1bre', form.current, {
-            publicKey: 'ie3XvRbY2rSalRh40',
+        emailjs.sendForm( process.env.SERVICE, process.env.TEMPLATE, form.current, {
+            publicKey:process.env.PUBLICKEY,
         }).then((res) => {
             console.log(res);
             notyf.success('Email sent succesfully!!')

@@ -50,7 +50,7 @@ const Page = () => {
         });
 
         try {
-            const res = await fetch('/api/auth/authentification', {
+            const res = await fetch('https://emoecom.vercel.app/api/auth/authentification', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

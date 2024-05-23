@@ -4,6 +4,10 @@
     margin-left: 35px;
     margin-right: 35px;
 }
+ .ul-nav  {
+    display: flex;
+    gap: 13px;
+ }
 
 .ul-nav li {
     border-radius: 10px;
@@ -163,6 +167,7 @@ Nav Icons
             transition: all 1s ease;
             z-index: 2;
     }
+
     .only-screen::before {
         content: "";
         position: fixed;
@@ -176,7 +181,7 @@ Nav Icons
         z-index: -1;
     }
     .false + .only-screen{
-        transform: translateY(-600px);
+        transform: translateY(-800px);
     }
     .close {
        right: -33px;
@@ -206,6 +211,10 @@ Nav Icons
         flex-direction: column;
         justify-content: center;
         align-items: center;
+     }
+     .ul-nav,
+     .cat-shop-container {
+         display: none;
      }
   }
 
@@ -245,6 +254,10 @@ Nav Icons
 }
 .nav-switch {
     font-size: 16px;
+}
+.ul-nav,
+.cat-shop-container {
+    display: none;
 }
 
 }

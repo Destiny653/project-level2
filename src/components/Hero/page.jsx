@@ -44,7 +44,7 @@ export default function Hero() {
 
   useEffect(() => {
     async function getData() {
-      const res = await fetch('http://localhost:3000/api/posts');
+      const res = await fetch('https://emoecom.vercel.app/api/posts');
 
       if (!res.ok) {
         throw new Error('faild to fetch data')
@@ -53,7 +53,7 @@ export default function Hero() {
 
     }
     async function newData() {
-      const res = await fetch('http://localhost:3000/api/products');
+      const res = await fetch('https://emoecom.vercel.app/api/products');
       if (!res.ok) {
         throw new Error('faild to fetch data')
       }

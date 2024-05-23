@@ -25,7 +25,7 @@ export default function Page() {
     const [indexval, setIndexval] = useState(0)
 
     async function getProduct() {
-        const res = await fetch('http://localhost:3000/api/products');
+        const res = await fetch('https://emoecom.vercel.app/api/products');
 
         if (!res.ok) {
             throw new Error('faild to fetch data')
