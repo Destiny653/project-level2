@@ -9,8 +9,6 @@ import { useRouter } from 'next/navigation'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'
 import '../homepage.css'
-import { Loader, LoadingOverlay } from 'react-overlay-loader'
-import 'react-overlay-loader/styles.css';
 
 const page = () => {
 
@@ -19,7 +17,6 @@ const page = () => {
     const { mode } = useContext(ThemeContext)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState(false)
 
 
 
@@ -75,8 +72,6 @@ const page = () => {
 
     return (
         <>
-            <LoadingOverlay >
-                <Loader loading={loading} />
 
                 <div className='container' style={{ backgroundColor: 'red' }}>
                     <div className='signCard' style={mode == 'light' ? { color: 'black' } : { color: 'black' }}>
@@ -100,10 +95,9 @@ const page = () => {
                         </form>
                         <h1 className=' text-2xl'>--or--</h1>
 
-                        <button className='button' onClick={() => {signIn("google"); setLoading(true) }}>Sign in with <FcGoogle size={30} /> </button>
+                        <button className='button' onClick={() => signIn("google") }>Sign in with <FcGoogle size={30} /> </button>
                     </div>
                 </div>
-            </LoadingOverlay>
         </>
     )
 }

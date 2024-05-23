@@ -16,8 +16,6 @@ import { GiSelfLove } from "react-icons/gi";
 import { CartContext } from '../../../context/CartContext';
 import Link from 'next/link';
 import { ThemeContext } from '../../../context/ThemeContext';
-import { LoadingOverlay, Loader } from 'react-overlay-loader';
-import 'react-overlay-loader/styles.css';
 
 
 
