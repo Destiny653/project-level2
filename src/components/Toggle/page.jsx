@@ -41,7 +41,7 @@ export default function Toggle() {
                         }
                     </ul>
                     :
-                    <ul className="ul-nav2" style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
+                    <ul key={12} className="ul-nav2" style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
                         <h1 className="bg-red-700 py-3 pl-3 text-white">SHOP BY CATEGORIES</h1>
                         <h1 className="text-white span-li"><li className=" px-3 py-3" ><LuPalmtree className=" inline" size={22} /> Vegitables</li></h1>
                         <h1 className="text-white span-li"><li className=" px-3 py-3" ><LuApple className=" inline" size={22} /> Fresh Fruits</li></h1>

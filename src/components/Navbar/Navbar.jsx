@@ -51,7 +51,7 @@ export default function NavBar() {
                     <input type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
                     <input type="button" value="Search" className="home-input-btn-r text align-top h-12 w-3/12 " />
                 </div>
-                <ul className="icon-nav flex gap-2">
+                <ul key={10} className="icon-nav flex gap-2">
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><Link href='/cart'><IoCartOutline /></Link><span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-0 bg-red-600 text-white  '>{cartItems ? cartItems?.length : 0}</span></li>
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90"><FaRegCircleUser /></li>
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90"><GrLanguage /></li>
@@ -75,7 +75,7 @@ export default function NavBar() {
                         }
                         <DarkMode />
                     </ul>
-                    <ul className='flex gap-3 scale-75'>
+                    <ul key={9} className='flex gap-3 scale-75'>
                         <li className='nav-i text-3xl '><FaFacebookF className='social-icon' /></li>
                         <li className='nav-i text-3xl '><TfiYoutube className='social-icon' /></li>
                         <li className='nav-i text-3xl '><FaTwitter className='social-icon' /></li>
