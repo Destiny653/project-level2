@@ -17,7 +17,7 @@ export default function Page() {
     useEffect(() => {
 
     async function getData() {
-        const result = await fetch('https://emoecom.vercel.app/api/products')
+        const result = await fetch('api/products')
 
         if (!result.ok) {
             throw new Error('Faild to fetch data')
