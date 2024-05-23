@@ -283,7 +283,7 @@ export default function Hero() {
           </section>
         </div>
         <div className='farmers-bg flex flex-col justify-center items-center'>
-          <h1 className='title-head dancing_scriptregular text-3xl font-bold text-lime-500'>Today's Fresh</h1>
+          <h1 className='title-head dancing_scriptregular text-3xl font-bold text-lime-500'>Todays Fresh</h1>
           <h1 className='title-des nunitoextralight_italic text-5xl font-extrabold text-center'>Our Farmers</h1>
           <ul className='farmers-parent flex items-center justify-center gap-6 m-10'>
             {
