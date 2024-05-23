@@ -4,7 +4,7 @@ import './check.css'
 import { ThemeContext } from '../../../context/ThemeContext'
 import { CartContext } from '../../../context/CartContext'
 
-export default function page() {
+export default function Page() {
 
     const { cartItems } = useContext(CartContext)
 

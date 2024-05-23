@@ -10,7 +10,7 @@ import { FaStar } from "react-icons/fa";
 
 
 
-export default function page() {
+export default function Page() {
     const [mainindex, setMainindex] = useState(0)
     const [posts, setPosts] = useState([])
 

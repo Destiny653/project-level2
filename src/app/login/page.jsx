@@ -10,7 +10,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'
 import '../homepage.css'
 
-const page = () => {
+const Page = () => {
 
     const navigation = useRouter();
 
@@ -102,4 +102,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

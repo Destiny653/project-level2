@@ -14,7 +14,7 @@ import { ThemeContext } from '../../../context/ThemeContext';
 
 
 
-export default function page() {
+export default function Page() {
     const { handleAddToCart, store } = useContext(CartContext)
     const { mode } = useContext(ThemeContext)
 

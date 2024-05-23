@@ -67,8 +67,8 @@ export default function NavBar() {
                     <Toggle/>
                     <ul className='ul-nav flex gap-4 items-baseline'>
                         {
-                            links.map((link) => (
-                                <li className='text px-2 py-1'>
+                            links.map((link, index) => (
+                                <li key={index} className='text px-2 py-1'>
                                     <a href={link.href}>{link.name}</a>
                                 </li>
                             ))

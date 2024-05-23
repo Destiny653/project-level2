@@ -8,7 +8,7 @@ import Footer from '@/components/Footer/footer';
 import Link from 'next/link';
 import { CartContext } from '../../../context/CartContext';
 
-export default function page() {
+export default function Page() {
 
     const { cartItems, handleAddToCart } = useContext(CartContext)
     const [newCart, setNewCart] = useState([])

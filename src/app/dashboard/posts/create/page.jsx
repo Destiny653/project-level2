@@ -11,7 +11,7 @@ import Link from 'next/link'
 import './create.css'
 import { ThemeContext } from '../../../../../context/ThemeContext'
 
-const page = () => {
+const Page = () => {
 
     const navigation = useRouter();
 
@@ -148,4 +148,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
