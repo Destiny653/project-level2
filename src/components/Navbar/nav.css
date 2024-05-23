@@ -79,7 +79,7 @@ Nav Icons
   ======================================
   */
 
-@media screen and (max-width: 1100px) {
+@media all and (max-width: 1100px) {
 
     .span-tag:hover,
     .span-li:hover{
@@ -193,7 +193,7 @@ Nav Icons
   ======================================
   */
 
-  @media screen and (max-width: 700px) {
+  @media all and (max-width: 700px) {
 
     .search-section {
         display: none;
@@ -216,10 +216,13 @@ Nav Icons
   ======================================
   */
 
-@media screen and (max-width: 620px) {
+@media all and (max-width: 620px) {
 
     .only-screen {
         width: 60%;
+}
+.nav-switch {
+    font-size: 18px;
 }
 
 }
@@ -229,7 +232,7 @@ Nav Icons
   ======================================
   */
 
-@media screen and (max-width: 460px) {
+@media all and (max-width: 460px) {
 
     .only-screen {
         width: 60%;
@@ -239,6 +242,9 @@ Nav Icons
     size: 19px;
     padding: 0;
     gap: 2px;
+}
+.nav-switch {
+    font-size: 16px;
 }
 
 }
