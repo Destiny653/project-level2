@@ -2,24 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-import { Notyf } from 'notyf';
-import 'notyf/notyf.min.css';
 import './posts.css';
 import { FaStar } from "react-icons/fa";
-import dynamic from 'next/dynamic';
-
-
-
-
-
-const LibraryComponent = dynamic(
-
-  () => import('notyf'),
-
-  { ssr: false }
-
-);
-
 
 
 
@@ -32,15 +16,7 @@ export default function Page() {
     const [posts, setPosts] = useState([])
 
 
-    //create an instance of Notyf
-    const notyf = new Notyf({
-        duration: 3000,
-        position: {
-            x: 'right',
-            y: 'top'
-        }
-    });
-
+   
     useEffect(() => {
 
     async function getData() {
@@ -63,9 +39,9 @@ export default function Page() {
         if (res.status === 200) {
             const result = await res.json()
             console.log(result.body);
-            notyf.success('Successfully deleted')
+             alert('Successfully deleted')
         } else {
-            notyf.error('Delete Error')
+            alert('Delete Error')
         }
 
         // setPosts(posts.filter((data, index) => index !== mainindex))

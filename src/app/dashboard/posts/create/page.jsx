@@ -2,28 +2,15 @@
 import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { Notyf } from 'notyf';
-import 'notyf/notyf.min.css'
 import './create.css'
 import { ThemeContext } from '../../../../../context/ThemeContext'
-import dynamic from 'next/dynamic';
+ 
 
 
-
-
-
-const LibraryComponent = dynamic(
-
-  () => import('notyf'),
-
-  { ssr: false }
-
-);
-
+ 
 
 const Page = () => {
-
-    <LibraryComponent/>
+ 
 
     const navigation = useRouter();
 
@@ -34,16 +21,6 @@ const Page = () => {
     const [img, setImg] = useState('')
     const [rate, setRate] = useState('')
     const [price, setPrice] = useState('')
-
-
-    const notyf = new Notyf({
-        duration: 3000,
-        position: {
-            x: 'right',
-            y: 'top'
-        }
-    });
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -72,14 +49,14 @@ const Page = () => {
                 if (response.status === 201) {
                     const result = await response.json();
                     console.log(result);
-                    notyf.success('succefully created');
+                     alert('succefully created')
                     navigation.push('/dashboard/posts');
                 } else {
                     notyf.error('Creation error')
                 }
             } catch (e) {
                 console.log(e);
-                notyf.error('error')
+                 alert('error')
             }
         }
     };
