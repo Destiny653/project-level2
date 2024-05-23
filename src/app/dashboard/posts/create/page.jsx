@@ -29,13 +29,9 @@ const Page = () => {
         }
     });
 
-
-    useEffect(() => {
-
         const { data: session } = useSession()
         console.log(session)
-        
-    }),[]
+ 
 
 
     const handleSubmit = async (e) => {
