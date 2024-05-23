@@ -1,13 +1,10 @@
 'use client'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
-import { FcGoogle } from 'react-icons/fc'
-import Navbar from '@/components/Navbar/Navbar'
 import { useRouter } from 'next/navigation'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'
-import Link from 'next/link'
 import './create.css'
 import { ThemeContext } from '../../../../../context/ThemeContext'
 
@@ -33,12 +30,13 @@ const Page = () => {
     });
 
 
-    const { data: session } = useSession()
-    console.log(session)
+    useEffect(() => {
 
-    // if (session) {
+        const { data: session } = useSession()
+        console.log(session)
+        
+    }),[]
 
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();

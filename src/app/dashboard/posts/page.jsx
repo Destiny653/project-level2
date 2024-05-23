@@ -24,6 +24,7 @@ export default function Page() {
         }
     });
 
+    useEffect(() => {
 
     async function getData() {
         const result = await fetch('http://localhost:3000/api/products')
@@ -35,6 +36,8 @@ export default function Page() {
         setPosts(await result.json())
     }
 
+    getData()
+}, [posts]);
 
     const deletePost = async (id) => {
         const res = await fetch(`http://localhost:3000/api/products/${id}`, {
@@ -52,9 +55,6 @@ export default function Page() {
     }
 
 
-    useEffect(() => {
-        getData()
-    }, [posts]);
 
 
 
