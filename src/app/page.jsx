@@ -1,5 +1,5 @@
 'use client'
-import Hero from "@/components/hero/page";
+import Hero from "../components/Hero/page";
 import './homepage.css'
 import Image from "next/image";
 import { GiMasonJar, GiEasterEgg } from "react-icons/gi";
