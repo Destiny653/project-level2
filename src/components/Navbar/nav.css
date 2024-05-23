@@ -215,6 +215,8 @@ Nav Icons
      .ul-nav,
      .cat-shop-container {
          display: none;
+         width: 0;
+         overflow: hidden;
      }
   }
 
@@ -258,6 +260,8 @@ Nav Icons
 .ul-nav,
 .cat-shop-container {
     display: none;
+    width: 0;
+    overflow: hidden;
 }
 
 }
