@@ -14,7 +14,7 @@ import dynamic from 'next/dynamic';
 
 const LibraryComponent = dynamic(
 
-  () => import('library'),
+  () => import('notyf'),
 
   { ssr: false }
 
