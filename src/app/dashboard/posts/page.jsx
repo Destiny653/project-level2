@@ -6,8 +6,6 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import './posts.css';
 import { FaStar } from "react-icons/fa";
-import { LoadingOverlay, Loader } from 'react-overlay-loader';
-import 'react-overlay-loader/styles.css';
 
 
 
@@ -15,7 +13,6 @@ import 'react-overlay-loader/styles.css';
 export default function page() {
     const [mainindex, setMainindex] = useState(0)
     const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(false)
 
 
     //create an instance of Notyf
@@ -51,7 +48,7 @@ export default function page() {
             notyf.error('Delete Error')
         }
 
-        setPosts(posts.filter((data, index) => index !== mainindex))
+        // setPosts(posts.filter((data, index) => index !== mainindex))
     }
 
 
@@ -63,14 +60,11 @@ export default function page() {
 
     return (
         <>
-            <LoadingOverlay >
-                <Loader loading={loading} />
-
                 <section className='post-sub-container'>
                     <ul className='post-sub-child'>
                         <div className='post-opt flex gap-4'>
                             <h1 className='text-xl text-orange-500'>All Posts</h1>
-                            <button onClick={()=> setLoading(true)} className=' bg-black font-semibold text-lime-500  py-2 px-12 rounded-md'>
+                            <button className=' bg-black font-semibold text-lime-500  py-2 px-12 rounded-md'>
                                 <Link href='/dashboard/posts/create' >Add</Link>
                             </button>
                         </div>
@@ -118,8 +112,6 @@ export default function page() {
                         </div>
                     </div>
                 </section>
-            </LoadingOverlay>
-
         </>
     )
 }

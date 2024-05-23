@@ -36,8 +36,7 @@ const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
 export default function Hero() {
 
   const { mode } = useContext(ThemeContext)
-  const { handleAddToCart, store } = useContext(CartContext)
-  const [loading, setLoading] = useState(false)
+  const { handleAddToCart} = useContext(CartContext)
   const [selected, setSelected] = useState(false)
   const [indexval, setIndexval] = useState(0)
 
@@ -136,7 +135,6 @@ export default function Hero() {
 
   return (
     <div className='hero-parent w-full flex flex-col gap-12 relative' >
-      <LoadingOverlay >
 
         {PopUp()}
 
@@ -168,7 +166,7 @@ export default function Hero() {
             <h2 className='flex justify-center items-center text-center  text-xl font-extrabold'>Hurry up! Offers ends soon</h2>
             <p className='text-sm font-normal' style={{ color: '#666666' }}>Please select a time for layout</p>
             <Link href='/products'>
-              <button onClick={()=> setLoading(true)} className=' btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>VIEW ALL</button>
+              <button className=' btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>VIEW ALL</button>
             </Link>
           </section>
           <section className='deals-of-day-p w-2/4   mx-6 flex justify-center items-center gap-5 '>
@@ -176,9 +174,8 @@ export default function Hero() {
               datatwo.slice(8, 11).map((item, index) => {
                 return (
                   <div key={item._id} className='deals-of-day-i card-hover nunitoextralight_italic flex justify-center items-center flex-col box-border p-2 py-8 relative  overflow-hidden bg-white gap-3 rounded-3xl' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
-                    <Loader loading={loading} />
                     <Link href={`/${item._id}`}>
-                      <Image onClick={() => setLoading(true)} className='m-auto  opt-img size-4/5' src={item.img} alt='content image' width={400} height={400} />
+                      <Image   className='m-auto  opt-img size-4/5' src={item.img} alt='content image' width={400} height={400} />
                     </Link>
                     <h1 className=' text-xs nunitoextralight_italic font-normal ' style={{ color: 'gray' }}>{item.title.slice(0, 29).toUpperCase()}...</h1>
                     <p className=' text-base font-bold'>{item.description}</p>
@@ -209,9 +206,8 @@ export default function Hero() {
               datatwo.slice(0, 5).map((item, index) => {
                 return (
                   <div key={item._id} className='bg-white  relative item card-hover w-100 flex flex-col justify-center items-center gap-3 box-border overflow-hidden p-4 rounded-2xl ' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
-                    <Loader loading={loading} />
                     <Link href={`/${item._id}`}>
-                      <Image onClick={() => setLoading(true)} className=' m-auto  w-4/5' src={item.img} alt='content image' width={200} height={200} />
+                      <Image  className=' m-auto  w-4/5' src={item.img} alt='content image' width={200} height={200} />
                     </Link>
                     <h1 className=' text-xs nunitoextralight_italic font-normal ' style={{ color: 'gray' }}>{item.title.toUpperCase().slice(0, 23)}...</h1>
                     <p className=' text-base font-bold'>{item.description}</p>
@@ -238,7 +234,7 @@ export default function Hero() {
               <h1 className=' text-xl font-bold text-lime-500 '>Energize from nature</h1>
               <h1 className='title-des text-5xl font-extrabold'>Everyday Fresh <br /> with Organic</h1>
               <Link href='/product'>
-                <button onClick={()=> setLoading(true)}  className=' w-fit btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium' >SHOP NOW</button>
+                <button  className=' w-fit btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium' >SHOP NOW</button>
               </Link>
             </div>
           </div>
@@ -248,7 +244,7 @@ export default function Hero() {
                 <h1 className=' text-xl font-bold text-lime-500 ' >Up to 40% off</h1>
                 <h1 className='title-des text-5xl font-extrabold'>Muscat grapes</h1>
                 <Link href='/product'>
-                  <button onClick={()=> setLoading(true)}  className=' w-fit btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>SHOP NOW</button>
+                  <button  className=' w-fit btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>SHOP NOW</button>
                 </Link>
               </div>
             </section>
@@ -257,7 +253,7 @@ export default function Hero() {
                 <h1 className=' text-xl font-bold text-lime-500 '> Up to 50% Off</h1>
                 <h1 className='title-des text-5xl font-extrabold'>Wagyu Geef</h1>
                 <Link href='/product'>
-                  <button onClick={()=> setLoading(true)}  className=' w-fit bgn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>SHOP NOW</button>
+                  <button  className=' w-fit bgn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>SHOP NOW</button>
                 </Link>
               </div>
             </section>
@@ -313,7 +309,6 @@ export default function Hero() {
             }
           </ul>
         </div>
-      </LoadingOverlay>
     </div >
   )
 }

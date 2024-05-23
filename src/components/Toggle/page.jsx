@@ -21,7 +21,6 @@ export default function Toggle() {
         { name: 'Login', href: '/login' },
         { name: 'Register', href: '/register' },
         { name: 'Cart', href: '/cart' },
-        { name: 'Logout', href: '/logout' },
     ]
 
     return (

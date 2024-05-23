@@ -10,8 +10,6 @@ import 'notyf/notyf.min.css'
 import Link from 'next/link'
 import './create.css'
 import { ThemeContext } from '../../../../../context/ThemeContext'
-import { Loader, LoadingOverlay } from 'react-overlay-loader'
-import 'react-overlay-loader/styles.css';
 
 const page = () => {
 
@@ -24,8 +22,6 @@ const page = () => {
     const [img, setImg] = useState('')
     const [rate, setRate] = useState('')
     const [price, setPrice] = useState('')
-    const [method, setMethod] = useState(false)
-    const [loading, setLoading] = useState(false)
 
 
     const notyf = new Notyf({
@@ -86,7 +82,7 @@ const page = () => {
     const handleImageDisplay = () => {
         if (img) {
             return (
-                <div   >
+                <div>
                     <Image src={URL.createObjectURL(img)} alt="Selected Image" width={600} height={600} />
                 </div>
             );
@@ -98,59 +94,56 @@ const page = () => {
 
     return (
         <div className='relative box-border py-8'>
-            <LoadingOverlay >
-                <Loader loading={loading} />
-                <div className='container box-border flex items-center justify-between '>
-                    <div className='sign-card flex gap-5' style={mode == 'light' ? { color: 'black' } : { color: 'white' }}>
-                        <form onSubmit={handleSubmit} className=' box-border overflow-hidden form'>
-                            <div className=' mb-3 flex flex-col'>
-                                <h1 className=' text-3xl m-auto'>Create Post</h1>
-                                <label htmlFor="text" className=' pb-1'>
-                                    Title
-                                </label>
-                                <input type="text" value={title} name='text' placeholder='Enter Title...' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setTitle(e.target.value)} required />
-                            </div>
-                            <div className=' mb-6 flex flex-col'>
-                                <label htmlFor="text" className=' pb-1'>
-                                    Description
-                                </label>
-                                <input type="text" value={description} name='text' placeholder='Enter description' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setDescription(e.target.value)} required />
-                            </div>
-                            <div className=' mb-6 flex flex-col'>
-                                <label htmlFor="text" className=' pb-1'>
-                                    Rating
-                                </label>
-                                <input type="number" value={rate} name='text' placeholder='Rate from 1-5 ex: 3.4' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setRate(e.target.value)} required />
-                            </div>
-                            <div className=' mb-6 flex flex-col'>
-                                <label htmlFor="text" className=' pb-1'>
-                                    Price
-                                </label>
-                                <input type="number" value={price} name='text' placeholder='Enter price' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setPrice(e.target.value)} required />
-                            </div>
-                            <div className=' mb-6 flex flex-col'>
-                                <label htmlFor="text" className=' pb-1'>
-                                    Image
-                                </label>
-                                <input
-                                    type='file'
-                                    name='file'
-                                    required
-                                    accept='image/png, imapge/jpg, image/jpeg'
-                                    className=' rounded-3xl form-control py-2 px-4 border'
-                                    onChange={e => { setImg(e.target.files[0]); setMethod(true) }} />
-                            </div>
-                        </form>
-                        <div className={`${method} img-con`}>
-                            {handleImageDisplay()}
-                            <button onClick={() => setLoading(true)} className='button  border py-2 mt-5  bg-slate-200 rounded-3xl ' type='submit'>
-                                Create
-                            </button>
+            <div className='container box-border flex items-center justify-between '>
+                <div className='sign-card flex gap-5' style={mode == 'light' ? { color: 'black' } : { color: 'white' }}>
+                    <form onSubmit={handleSubmit} className=' box-border overflow-hidden form'>
+                        <div className=' mb-3 flex flex-col'>
+                            <h1 className=' text-3xl m-auto'>Create Post</h1>
+                            <label htmlFor="text" className=' pb-1'>
+                                Title
+                            </label>
+                            <input type="text" value={title} name='text' placeholder='Enter Title...' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setTitle(e.target.value)} required />
                         </div>
-
+                        <div className=' mb-6 flex flex-col'>
+                            <label htmlFor="text" className=' pb-1'>
+                                Description
+                            </label>
+                            <input type="text" value={description} name='text' placeholder='Enter description' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setDescription(e.target.value)} required />
+                        </div>
+                        <div className=' mb-6 flex flex-col'>
+                            <label htmlFor="text" className=' pb-1'>
+                                Rating
+                            </label>
+                            <input type="number" value={rate} name='text' placeholder='Rate from 1-5 ex: 3.4' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setRate(e.target.value)} required />
+                        </div>
+                        <div className=' mb-6 flex flex-col'>
+                            <label htmlFor="text" className=' pb-1'>
+                                Price
+                            </label>
+                            <input type="number" value={price} name='text' placeholder='Enter price' className=' rounded-3xl form-control py-3 px-4 border' onChange={e => setPrice(e.target.value)} required />
+                        </div>
+                        <div className=' mb-6 flex flex-col'>
+                            <label htmlFor="text" className=' pb-1'>
+                                Image
+                            </label>
+                            <input
+                                type='file'
+                                name='file'
+                                required
+                                accept='image/png, imapge/jpg, image/jpeg'
+                                className=' rounded-3xl form-control py-2 px-4 border'
+                                onChange={e => { setImg(e.target.files[0]); }} />
+                        </div>
+                        <button className='button  border py-2 mt-5  bg-slate-200 rounded-3xl ' type='submit'>
+                            Create
+                        </button>
+                    </form>
+                    <div className={`img-con`}>
+                        {handleImageDisplay()}
                     </div>
+
                 </div>
-            </LoadingOverlay>
+            </div>
         </div>
     )
 }

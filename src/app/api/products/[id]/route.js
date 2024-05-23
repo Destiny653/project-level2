@@ -1,6 +1,7 @@
 import Product from "@/models/Product";
 import connectDB from "@/utils/db";
 import { NextResponse } from 'next/server';
+import { v2 as cloudinary } from 'cloudinary';
 
 
 //route segment for sorting elements by Id

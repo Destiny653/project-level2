@@ -1,6 +1,7 @@
 import Product from "@/models/Product";
 import connectDB from "@/utils/db";
 import { NextResponse } from "next/server";
+import { v2 as cloudinary } from 'cloudinary';
 
 
 export const GET = async () => {
@@ -27,13 +28,13 @@ export const GET = async () => {
 export const POST = async (req) => {
 
     const { title, description, img, rate, price } = await req.json();
-    console.log('title',title,' ',' description',description,' ','content',content)
+    console.log('title',title,' ',' description',description,' ', 'rate',rate, ' ','price',price)
     //console.log('before:', img);
     //Configuring Cloudinary
     cloudinary.config({
-        cloud_name: process.env.CLOUD_NAME,
-        api_key: process.env.API_KEY,
-        api_secret: process.env.API_SECRET
+        cloud_name:process.env.CLOUD_NAME,
+        api_key:process.env.API_KEY,
+        api_secret:process.env.API_SECRET
     });
     
     const uploadResult = await cloudinary.uploader.upload(img, {

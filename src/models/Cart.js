@@ -16,6 +16,10 @@ const cartSchema = new Schema({
     price: {
         type: Number,
         required: true
+    },
+    rate: {
+        type: Number,
+        required: true
     }
 
 },{timestamps:true});
