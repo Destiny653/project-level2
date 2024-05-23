@@ -65,7 +65,7 @@ export default function NavBar() {
                         <div className='bug bug2'></div>
                     </div>
                     <Toggle/>
-                    <ul className='items-baseline'>
+                    <ul className='ul-nav items-baseline'>
                         {
                             links.map((link, index) => (
                                 <li key={index} className='text px-2 py-1'>
