@@ -230,7 +230,7 @@ keyFrames
   ======================================
   */
 
-@media screen and (max-width: 1175px) {
+@media all and (max-width: 1175px) {
 
     .title-head{
         margin: 0;
@@ -264,7 +264,7 @@ keyFrames
   ======================================
   */
 
-@media screen and (max-width: 960px) {
+@media all and (max-width: 960px) {
     .shop-now-p {
         display: flex;
         flex-direction: column;
@@ -338,7 +338,7 @@ keyFrames
   ======================================
   */
 
-  @media screen and (max-width: 840px) {
+  @media all and (max-width: 840px) {
 
     .arrivals-p :nth-child(4) {
         display: none;
@@ -353,7 +353,7 @@ keyFrames
   ======================================
   */
 
-@media screen and (max-width: 740px) {
+@media all and (max-width: 740px) {
     .arrivals-p :nth-child(4) {
         display: none;
     }
@@ -378,7 +378,7 @@ keyFrames
   ======================================
   */
 
-@media screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
     .arrivals-p :nth-child(3) {
         display: none;
     }
@@ -414,7 +414,7 @@ keyFrames
   ======================================
   */
 
-@media screen and (max-width: 520px) {
+@media all and (max-width: 520px) {
 
     .farmers-parent {
         display: grid;
@@ -469,7 +469,7 @@ keyFrames
   ======================================
   */
 
-@media screen and (max-width: 410px) {
+@media  and (max-width: 410px) {
     .arrivals-p:nth-child(4) {
         display: none;
     }

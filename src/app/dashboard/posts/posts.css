@@ -38,7 +38,7 @@
 =============================================
  */
 
- @media screen and (max-width: 1030px) {
+ @media all and (max-width: 1030px) {
     .post-item {
         display: flex;
         flex-direction: column;
@@ -52,7 +52,7 @@
 =============================================
  */
 
- @media screen and (max-width: 800px) {
+ @media all and (max-width: 800px) {
 
     .post-items {
         display: grid;
@@ -74,7 +74,7 @@
 =============================================
  */
 
- @media screen and (max-width: 665px) {
+ @media all and (max-width: 665px) {
     .post-item {
         display: flex;
         flex-direction: column;
@@ -92,7 +92,7 @@
 =============================================
  */
 
- @media screen and (max-width: 490px) {
+ @media all and (max-width: 490px) {
 
     .post-sub-container {
         display: flex;
@@ -140,7 +140,7 @@
 =============================================
  */
 
- @media screen and (max-width: 340px) {
+ @media all and (max-width: 340px) {
     .post-item {
         display: flex;
         flex-direction: column;
