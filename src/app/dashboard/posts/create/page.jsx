@@ -76,10 +76,9 @@ const Page = () => {
                 </div>
             );
         } else {
-            return <div></div>;
+            return console.log('no image selected')
         }
     };
-
 
     return (
         <div className='relative box-border py-8'>
