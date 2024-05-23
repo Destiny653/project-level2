@@ -75,7 +75,7 @@ export default function Page() {
                                     return (
                                         <li key={index} onClick={() => setMainindex(index)} className='post-item flex box-border border p-5 gap-4'>
                                             <div className='box-border overflow-hidden'>
-                                                <Image className='rounded-xl hover:scale-125 ' src={post?.img} width={300} height={300} />
+                                                <Image className='rounded-xl hover:scale-125 ' alt='image of item' src={post?.img} width={300} height={300} />
                                             </div>
                                             <div className='flex flex-col'>
                                                 <h1 className='text  font-semibold  text-base'>{post?.title}</h1>
@@ -101,7 +101,7 @@ export default function Page() {
                         <div className='w-full nunitoextralight_italic flex flex-col gap-2'>
                             <h1 className='text-xl text-orange-500'>Preview</h1>
                             <div className='box-border flex justify-center'>
-                                <Image src={posts && posts[mainindex]?.img} width={300} height={300} />
+                                <Image src={posts && posts[mainindex]?.img} alt='item image' width={300} height={300} />
                             </div>
                             <h1 className='post-detail-t text-xl font-semibold'>{posts[mainindex]?.title}</h1>
                             <p className=' post-pg'>{posts[mainindex]?.description}Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

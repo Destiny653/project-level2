@@ -3,8 +3,6 @@ import React, { useContext } from 'react'
 import './detail.css'
 import Image from 'next/image';
 import { FaStar } from "react-icons/fa";
-import Link from 'next/link';
-import { CartContext } from '../../../context/CartContext';
 import Items from '@/components/Items/page';
 
 
@@ -33,7 +31,7 @@ export default async function page({ params }) {
             <div className='flex flex-col gap-10'>
                 <div className='flex w-full gap-4  box-border px-8 my-8 mt-24 '>
                     <section className=' detail-img-con flex justify-center items-center w-5/12  box-border rounded-2xl overflow-hidden'>
-                        <img className=' w-full' src={data.img} alt='food' width='100%' height='100%' />
+                        <Image className=' w-full' src={data.img} alt='food' width={400} height={400} />
                     </section>
                     <section className=' relative top-14 w-7/12 ml-4 flex flex-col gap-6 '>
                         <h1 className='text-3xl font-bold nunitoextralight_italic '>{data.title}</h1>

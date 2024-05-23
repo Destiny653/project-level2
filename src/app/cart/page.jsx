@@ -7,6 +7,7 @@ import NavBar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/footer';
 import Link from 'next/link';
 import { CartContext } from '../../../context/CartContext';
+import Image from 'next/image';
 
 export default function Page() {
 
@@ -78,7 +79,7 @@ export default function Page() {
                                 return (
                                     <tr key={index}>
                                         <td>
-                                            <img className=' size-24 rounded-full cart-img ' src={info?.img} alt='product' />
+                                            <Image className=' size-24 rounded-full cart-img ' src={info?.img} alt='product' height={400} width={400} />
                                         </td>
                                         <td className='cart-title-name'>{info?.title.slice(0, 15)}</td>
                                         <td>{info?.price}</td>

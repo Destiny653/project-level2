@@ -32,8 +32,8 @@ export default function Toggle() {
                     <ul className='ul-nav3 flex flex-col items-baseline'>
                         {
                             links.map((link, index) => (
-                                <Link href={link.href} className='w-full'>
-                                    <li key={index} className='span-tag text border-b p-3 w-full'>
+                                <Link key={index} href={link.href} className='w-full'>
+                                    <li  className='span-tag text border-b p-3 w-full'>
                                         {link.name}
                                     </li>
                                 </Link>

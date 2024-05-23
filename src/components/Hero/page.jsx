@@ -270,7 +270,7 @@ export default function Hero() {
                 services.map((service, index) => {
                   return (
                     <li key={index} className='nunitoextralight_italic service-con flex gap-5 '>
-                      <img className=' size-20 ' src={service.img} alt="" />
+                      <Image className=' size-20 ' src={service.img} alt="item image" />
                       <div className='flex flex-col justify-center'>
                         <h1 className='service-title text-2xl font-bold '>{service.title}</h1>
                         <p className='service-text text-base font-normal text-zinc-400'>{service.desc}</p>
