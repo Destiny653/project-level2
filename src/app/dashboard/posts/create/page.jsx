@@ -6,8 +6,24 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'
 import './create.css'
 import { ThemeContext } from '../../../../../context/ThemeContext'
+import dynamic from 'next/dynamic';
+
+
+
+
+
+const LibraryComponent = dynamic(
+
+  () => import('library'),
+
+  { ssr: false }
+
+);
+
 
 const Page = () => {
+
+    <LibraryComponent/>
 
     const navigation = useRouter();
 

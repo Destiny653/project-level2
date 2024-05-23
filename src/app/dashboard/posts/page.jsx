@@ -6,11 +6,28 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import './posts.css';
 import { FaStar } from "react-icons/fa";
+import dynamic from 'next/dynamic';
+
+
+
+
+
+const LibraryComponent = dynamic(
+
+  () => import('library'),
+
+  { ssr: false }
+
+);
 
 
 
 
 export default function Page() {
+
+
+    <LibraryComponent/>
+
     const [mainindex, setMainindex] = useState(0)
     const [posts, setPosts] = useState([])
 
