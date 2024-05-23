@@ -1,6 +1,5 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Notyf } from 'notyf';
@@ -28,10 +27,6 @@ const Page = () => {
             y: 'top'
         }
     });
-
-
-        const { data: session  } = useSession()
- 
 
 
     const handleSubmit = async (e) => {
