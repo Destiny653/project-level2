@@ -10,7 +10,7 @@ import Items from '@/components/Items/page';
 async function newData(id) {
 
     
-    const res = await fetch(`https://emoecom.vercel.app/api/products/${id}`);
+    const res = await fetch(`api/products/${id}`);
     if (!res.ok) {
         throw new Error('faild to fetch data')
     }

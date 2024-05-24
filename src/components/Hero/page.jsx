@@ -139,14 +139,14 @@ export default function Hero() {
         <div>
           <h1 className='title-head text-3xl font-bold text-lime-400 dancing_scriptregular text-center'>Our Story</h1>
           <h1 className='title-des text-center text-5xl font-extrabold nunitoextralight_italic'>Fetured Categories</h1>
-          <div className='post-roll-con grid grid-flow-col mx-7 mt-9  overflow-x-scroll' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
+          <div className='post-roll-con grid grid-flow-col mx-2 mt-9  overflow-x-scroll' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
 
 
 
             {
               dataone.map((item) => {
                 return (
-                  <div key={item._id} className=' item w-100 roll-img-con flex flex-col justify-center items-center bg-lime-300 gap-4 p-4 mx-6 rounded-full  rounded-t-full '>
+                  <div key={item._id} className=' item w-100 roll-img-con flex flex-col justify-center items-center bg-lime-300 gap-4 p-4 mx-3 rounded-full  rounded-t-full '>
                     <Image className=' w-100 rounded-full roll-img  w-full  adjust-img-h ' src={item.img} alt='content image' width={200} height={200} />
                     <h1 className='  text-sm nunitoextralight_italic font-semibold relative right-4 bg-white p-2 rounded-lg  '>{item.title.slice(0, 14)}</h1>
                   </div>
@@ -167,11 +167,11 @@ export default function Hero() {
               <button className=' btn-bg bg-lime-500 px-9 py-3 rounded-lg text-white font-medium'>VIEW ALL</button>
             </Link>
           </section>
-          <section className='deals-of-day-p w-2/4   mx-6 flex justify-center items-center gap-5 '>
+          <section className='deals-of-day-p w-2/4 mt-3    mx-6 flex justify-center items-center gap-5 '>
             {
               datatwo.slice(8, 11).map((item, index) => {
                 return (
-                  <div key={item._id} className='deals-of-day-i card-hover nunitoextralight_italic flex justify-center items-center flex-col box-border p-2 py-8 relative  overflow-hidden bg-white gap-3 rounded-3xl' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
+                  <div key={item._id} className='deals-of-day-i card-hover nunitoextralight_italic flex justify-center items-center flex-col box-border p-2 py-8 relative overflow-hidden bg-white gap-3 rounded-3xl' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
                     <Link href={`/${item._id}`}>
                       <Image   className='m-auto  opt-img size-4/5' src={item.img} alt='content image' width={400} height={400} />
                     </Link>
@@ -203,7 +203,7 @@ export default function Hero() {
             {
               datatwo.slice(0, 5).map((item, index) => {
                 return (
-                  <div key={item._id} className='bg-white  relative item card-hover w-100 flex flex-col justify-center items-center gap-3 box-border overflow-hidden p-4 rounded-2xl ' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
+                  <div key={item._id} className='bg-white  relative  card-hover w-100 flex flex-col justify-center items-center gap-3 box-border overflow-hidden p-4 rounded-2xl ' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
                     <Link href={`/${item._id}`}>
                       <Image  className=' m-auto  w-4/5' src={item.img} alt='content image' width={200} height={200} />
                     </Link>

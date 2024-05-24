@@ -12,15 +12,7 @@ export const CartProvider = ({ children }) => {
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0 )
     const [cartItems, setCartItems] = useState([])
     const [store, setStore] = useState(0)
-    // let totalamount = 0
-    // console.log(store);
-  
-    // for (let i = 0; i < cartItems.length; i++) {
-    //     const element = cartItems[i];
-    //     totalamount += element.price * element.quantity
-    //     {()=>setStore(totalamount)}
-        
-    // }
+ 
 
 
     function handleAddToCart(getCurrentItem, qty, placeIndex) {

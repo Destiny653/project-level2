@@ -41,7 +41,7 @@ export default function Page() {
             alert('Delete Error')
         }
 
-        // setPosts(posts.filter((data, index) => index !== mainindex))
+        setPosts(posts.filter((data, index) => index !== mainindex))
     }
 
 

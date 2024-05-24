@@ -1,8 +1,8 @@
 .nav-head {
     background-color: #94cc11;
     border-radius: 20px;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
  .ul-nav  {
     display: flex;
@@ -157,7 +157,7 @@ Nav Icons
             flex-direction: column;
             gap: 10px;
             position: fixed;
-            top: -4px;
+            top: 0;
             left: 0;
             width: 50%;
             background-color: #3f3b3b;
@@ -168,8 +168,8 @@ Nav Icons
             z-index: 2;
     }
 
-    .only-screen::before {
-        content: "";
+  .false .only-screen::before {
+        content: " ";
         position: fixed;
         top: 0;
         left: 0;
@@ -181,7 +181,7 @@ Nav Icons
         z-index: -1;
     }
     .false + .only-screen{
-        transform: translateY(-800px);
+        transform: translateX(-700px);
     }
     .close {
        right: -33px;
@@ -205,11 +205,11 @@ Nav Icons
     }
     .icon-nav {
         margin: auto;
+        transform: scale(0.6);
     }
     .input-parent {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
      }
      .ul-nav,
@@ -246,7 +246,7 @@ Nav Icons
 @media all and (max-width: 460px) {
 
     .only-screen {
-        width: 60%;
+        width: 70%;
 } 
 .social-icon {
     /* transform: scale(0.6); */

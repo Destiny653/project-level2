@@ -17,8 +17,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="parent-to-3 bg-gray-100 relative box-border mb-10 py-10 pt-4 px-10">
-        <div className="parent-to-3 flex justify-between gap-3 w-full my-4">
+      <div className="parent-to-3 bg-gray-100 relative box-border mb-10 py-8 pt-4 px-10">
+        <div className="parent-to-3 flex justify-between gap-3 w-full ">
 
           <ul className="cat-shop-container bg-white " style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
             <h1 className="cat-shop-head bg-lime-500 text-white">SHOP BY CATEGORIES</h1>
@@ -30,7 +30,7 @@ export default function Home() {
             <h1 className="span-li"><li className="cat-shop px-3 py-3" ><LuMilk className=" inline" size={22} /> Milk & Cream</li></h1>
             <h1 className="span-li"><li className="cat-shop px-3 py-3" ><GiMasonJar className=" inline" size={22} />Oil & Vinegars</li></h1>
             <h1 className="span-li"><li className="cat-shop px-3 py-3" ><PiBreadBold className=" inline" size={22} /> Bread & Bakery</li></h1>
-          </ul>
+         </ul>
           <div className="img-1">
             <Image className="side-cat-image" src="https://demo2.wpthemego.com/themes/sw_emarket/layout55/wp-content/uploads/2023/03/Index_55_2.jpg" alt="background" width={500} height={500} />
           </div>

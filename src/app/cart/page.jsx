@@ -17,8 +17,8 @@ export default function Page() {
 
     // const [ignored, forceUpdate] = useReducer(x => x + 1, 0 )
 
-    for (let i = 0; i < cartItems.length; i++) {
-        const cart = cartItems[i].price;
+    for (let i = 0; i < cartItems?.length; i++) {
+        const cart = cartItems[i]?.price;
         console.log(cart);
 
     }
@@ -66,7 +66,7 @@ export default function Page() {
                         </tr>
                     </thead>
                     <tbody>
-                        {cartItems.length !== 0 ?
+                        {cartItems?.length !== 0 ?
                             cartItems?.map((item, index) => {
 
                                 let position = newCart.findIndex((value) => value._id === item.product_id);

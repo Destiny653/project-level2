@@ -52,7 +52,7 @@ const Page = () => {
                      alert('succefully created')
                     navigation.push('/dashboard/posts');
                 } else {
-                    notyf.error('Creation error')
+                     alert('creation error')
                 }
             } catch (e) {
                 console.log(e);
