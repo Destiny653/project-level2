@@ -25,10 +25,7 @@ export default function NavBar() {
     const { mode, change, setChange } = useContext(ThemeContext)
 
     const [searchValue, setSeacrchValue] = useState(" ")
-
-    if (searchValue !== " ") {
-        navigation.push('/products')
-    }
+ 
     setStore(searchValue || ' ')
 
     const links = [

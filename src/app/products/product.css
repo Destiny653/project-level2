@@ -15,7 +15,6 @@ padding-right: 44px;
 .grid-i:hover .grid-span {
     transform: translateY(-8px);
 }
-/* grid-cols-3 product-item-list */
 
 /* @media 990px */
 
@@ -38,9 +37,6 @@ padding-right: 44px;
     }
     .product-grid-btn{
         font-size: 14px;
-    }
-    .pop-content {
-        width: 70%;
     }
 }
 

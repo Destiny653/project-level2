@@ -89,7 +89,7 @@ export default function Page() {
     return (
         <>
 
-            <div className='flex gap-10  w-full bg-slate-100 box-border p-5'>
+            <div className='flex gap-10  w-full bg-slate-100 box-border'>
                 {PopUp()}
                 <div className='side-bar flex flex-col gap-5'>
                     <section>
