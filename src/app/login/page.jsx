@@ -75,7 +75,7 @@ const Page = () => {
 
                 <div className='container' style={{ backgroundColor: 'red' }}>
                     <div className='signCard' style={mode == 'light' ? { color: 'black' } : { color: 'black' }}>
-                        <form onSubmit={handleSubmit}>
+                        <form className='sign-form' onSubmit={handleSubmit}>
                             <div className=' mb-3 flex flex-col'>
                                 <h1 className=' text-3xl m-auto'>Sign in</h1>
                                 <label htmlFor="email" className=' pb-1'>

@@ -79,7 +79,7 @@ export default function Hero() {
               <div onClick={() => setSelected(false)} className={`${selected} nunitoextralight_italic close-pop absolute text-lg font-semibold`}>x</div>
               <p className=' mb-5 text-center font-semibold text-xs text-green-600 '>Successfully added to cart</p>
               <div className='flex pop-limit'>
-                <section className=' w-3/5 flex justify-center items-center gap-5 box-border overflow-hidden p-2 border-r-2 pl-4'>
+                <section className=' pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2 '>
                   <div className='box-border overflow-hidden rounded-md'>
                     <Image src={datatwo[indexval]?.img} alt='cart item' height={300} width={300} />
                   </div>
@@ -89,7 +89,7 @@ export default function Hero() {
                     <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
                   </div>
                 </section>
-                <section className=' w-2/5 flex flex-col justify-center items-center gap-4'>
+                <section className=' pop-sec2 flex flex-col justify-center items-center gap-4'>
                   <Link href='/checkout' className='w-11/12'>
                     <button className=' rounded-md font-semibold text-sm py-2 w-full  bg-lime-600 text-white active:bg-orange-500'>Checkout</button>
                   </Link>
@@ -226,7 +226,7 @@ export default function Hero() {
             }
           </section>
         </div>
-        <div className='shop-now-p flex items-center justify-center gap-5 m-10' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
+        <div className='shop-now-p box-border overflow-hidden flex items-center justify-center gap-5 m-10' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
           <div className='nunitoextralight_italic shop-now-i hero-img1 w-3/6'>
             <div className=' flex flex-col gap-4  relative top-14  left-14 '>
               <h1 className=' text-xl font-bold text-lime-500 '>Energize from nature</h1>

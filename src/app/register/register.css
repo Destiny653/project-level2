@@ -64,6 +64,12 @@ screen sizing maxwith 880px
         right: -50%;
         top: -30px;
     }
+    .sub-p {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 7px;
+        margin: 0;
+    }
  }
 /* 
 ===================================================

@@ -48,10 +48,33 @@ screen sizing maxwith 900px
     .form {
         width: 100%;
     }
-     .img-con {
+    .img-con {
         width: 100%;
     }
- }
+}
 
- 
+
+/* 
+===================================================
+screen sizing maxwith 700px
+===================================================
+ */
+
+ @media all and (max-width: 700px) {
+    .sign-card {
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+    }
+     .img-con {
+        height: 100%;
+        margin-right: 0px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .container{
+    padding: 24px 7px;
+
+    }
+}
  

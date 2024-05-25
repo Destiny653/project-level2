@@ -37,7 +37,7 @@ export default function NavBar() {
             <div className=" justify-center py-3 head-text ">
                 <p className=" text-xs text-center">GET 20% FOR ALL ORDERS IN THIS WEEK!</p>
             </div>
-            <div className="input-parent flex justify-between my-3 mx-10 mt-5">
+            <div className="input-parent flex justify-between my-3 mx-2 mt-5">
                 <Image className='logo-img'
                     src="/img/icon-3.png"
                     alt="logo"

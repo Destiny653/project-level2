@@ -30,6 +30,7 @@ export default function Page() {
         if (!res.ok) {
             throw new Error('faild to fetch data')
         }
+        
         setData(await res.json())
     }
 
@@ -47,7 +48,7 @@ export default function Page() {
                   <div onClick={() => setSelected(false)} className={`${selected} nunitoextralight_italic close-pop absolute text-lg font-semibold`}>x</div>
                   <p className=' mb-5 text-center font-semibold text-xs text-green-600 '>Successfully added to cart</p>
                   <div className='flex pop-limit'>
-                    <section className='pop-sec1 w-3/5 flex justify-center items-center gap-5 box-border overflow-hidden p-2 border-r-2 pl-4'>
+                    <section className='pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2'>
                       <div className='box-border overflow-hidden rounded-md'>
                         <Image src={data[indexval]?.img} alt='cart item' height={300} width={300} />
                       </div>
@@ -57,7 +58,7 @@ export default function Page() {
                         <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
                       </div>
                     </section>
-                    <section className='pop-sec2 w-2/5 flex flex-col justify-center items-center gap-4'>
+                    <section className='pop-sec2 flex flex-col justify-center items-center gap-4'>
                       <Link href='/checkout' className='w-11/12'>
                         <button className=' rounded-md font-semibold text-sm py-2 w-full  bg-lime-600 text-white active:bg-orange-500'>Checkout</button>
                       </Link>

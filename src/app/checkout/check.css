@@ -7,6 +7,9 @@ table {
     border-collapse: separate;
     border-spacing: 0 0;
 }
+.section-con {
+  padding: 0 10px;
+}
 
 /* @media 900px */
 
@@ -27,6 +30,7 @@ table {
         flex-direction: column;
         gap: 0px;
         justify-content: center;
+        width: 100%;
     }
 }
 

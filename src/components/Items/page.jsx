@@ -7,12 +7,13 @@ import { FaStar } from "react-icons/fa";
 import { GiSelfLove } from "react-icons/gi";
 import Link from 'next/link';
 import { CartContext } from '../../../context/CartContext';
+import './item.css'
 
 export default function Items() {
   const [datatwo, setDatatwo] = useState([])
   const [selected, setSelected] = useState(false)
   const [indexval, setIndexval] = useState(0)
-  const {store, handleAddToCart} =useContext(CartContext)
+  const { store, handleAddToCart } = useContext(CartContext)
 
   async function newData() {
     const res = await fetch('api/products');
@@ -38,7 +39,7 @@ export default function Items() {
               <div onClick={() => setSelected(false)} className={`${selected} nunitoextralight_italicextralight_italic close-pop absolute text-lg font-semibold`}>x</div>
               <p className=' mb-5 text-center font-semibold text-xs text-green-600 '>Successfully added to cart</p>
               <div className='flex'>
-                <section className=' w-3/5 flex justify-center items-center gap-5 box-border overflow-hidden p-2 border-r-2 pl-4'>
+                <section className=' pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2'>
                   <div className='box-border overflow-hidden rounded-md'>
                     <Image src={datatwo[indexval]?.img} alt='cart item' height={300} width={300} />
                   </div>
@@ -48,7 +49,7 @@ export default function Items() {
                     <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
                   </div>
                 </section>
-                <section className=' w-2/5 flex flex-col justify-center items-center gap-4'>
+                <section className=' pop-sec1 flex flex-col justify-center items-center gap-4'>
                   <Link href='/checkout' className='w-11/12'>
                     <button className=' rounded-md font-semibold text-sm py-2 w-full  bg-lime-600 text-white active:bg-orange-500'>Checkout</button>
                   </Link>
@@ -68,7 +69,7 @@ export default function Items() {
 
 
   return (
-    <div className='flex justify-center items-center gap-3'>
+    <div className='flex flex-shrink-0 overflow-scroll justify-center items-center gap-3'>
       {PopUp()}
       {
         datatwo?.slice(0, 5).map((item, index) => {
@@ -86,7 +87,7 @@ export default function Items() {
                 <FaStar color='gold' className='inline' />
               </h1>
               <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
-              <button onClick={()=> {handleAddToCart(item); setIndexval(index); setSelected(true)}} className=' btn-bg text-sm  nunitoextralight_italicextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
+              <button onClick={() => { handleAddToCart(item); setIndexval(index); setSelected(true) }} className=' btn-bg text-sm  nunitoextralight_italicextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
               <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
               <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
               <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />

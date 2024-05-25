@@ -29,11 +29,11 @@ export default async function page({ params }) {
     return (
         <>
             <div className='flex flex-col gap-10'>
-                <div className='flex w-full gap-4  box-border px-8 my-8 mt-24 '>
-                    <section className=' detail-img-con flex justify-center items-center w-5/12  box-border rounded-2xl overflow-hidden'>
+                <div className='detail-p flex w-full gap-4  box-border my-8 mt-24 '>
+                    <section className='detail1 detail-img-con flex justify-center items-center box-border rounded-2xl overflow-hidden'>
                         <Image className=' w-full' src={data.img} alt='food' width={400} height={400} />
                     </section>
-                    <section className=' relative top-14 w-7/12 ml-4 flex flex-col gap-6 '>
+                    <section className='detail2 relative ml-4 flex flex-col gap-6 '>
                         <h1 className='text-3xl font-bold nunitoextralight_italic '>{data.title}</h1>
                         <p className='nunitoextralight_italic text-base'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta repellat modi voluptatibus distinctio voluptatem rerum recusandae porro adipisci sapiente consequatur. Culpa voluptatem modi deleniti ab accusamus eligendi dolorum at enim!
                             Lorem , quos quibusdam quis accusamus sint dolore provident facere dolores quam qui eum consequatur cum laudantium. Corrupti dolore velit omnis.

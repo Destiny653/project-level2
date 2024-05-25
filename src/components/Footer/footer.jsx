@@ -47,7 +47,7 @@ export default function Footer() {
                     <h1 className='foot-title text-xl font-bold nunitoextralight_italic'>Talk with Us</h1>
                     <p className='text-base font-normal text-zinc-400 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis pariatur dolorum eaque aut fugit. Laudantium, officia ab. Dolore rem vitae fuga. Fugiat non nemo quod! Ut suscipit harum perspiciatis cupiditate.</p>
                     <Contact />
-                    <Link href='contact'>
+                    <Link href='/contact'>
                         <button><details className='contact-btn text-xl px-2 py-4 font-bold text-lime-500 nunitoextralight_italic'></details></button>
                     </Link>
                 </div>

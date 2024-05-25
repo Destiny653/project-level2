@@ -14,3 +14,31 @@
 .detail-scroll::-webkit-scrollbar{
     width: 3px;
 }
+.detail-p {
+    padding: auto 32px;
+}
+.detail1 {
+    width: 40%;
+}
+.detail2{
+    width: 60%;
+}
+
+/* 
+====================================
+@media all and (max-width:600px)
+====================================
+ */
+
+ @media all and (max-width:600px){
+    .detail-p{
+       display: flex;
+       flex-direction: column;
+    }
+    .detail1 {
+         width: 100%;
+     }
+    .detail2{
+         width: 100%;
+     }
+ }

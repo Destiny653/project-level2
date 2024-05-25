@@ -134,6 +134,9 @@ body {
   background-color:#0e111bf1;
   color: #fff;
 }
+/* * {
+  outline: 1px solid #f80000;
+} */
 
  
 
@@ -251,9 +254,15 @@ PopUp
   right: 40px;
   top: 20px;
 }
+.pop-sec1{
+  width: 60%;
+}
+.pop-sec2{
+  width: 40%;
+}
 
 /* 
-@media 600px
+@media 800px
  */
 
  @media all and (max-width: 800px) {
@@ -285,5 +294,15 @@ PopUp
   }
   .pop-sec2 {
     width: 100%;
+  }
+  .pop-content {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 15px;
+  }
+  .pop-container {
+    box-sizing: border-box;
+    padding: 7px;
   }
  }

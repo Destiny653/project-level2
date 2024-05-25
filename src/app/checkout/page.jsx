@@ -18,7 +18,7 @@ export default function Page() {
 
             {/* checkout your card items */}
 
-            <div className='section-con flex justify-center w-full gap-2 pt-6 box-border px-10'>
+            <div className='section-con flex justify-center w-full gap-2 pt-6 box-border'>
                 <form className=' form-section w-2/4 box-border p-5 pt-0 flex gap-3 flex-col'>
                     <h1 className='roboto text-2xl  font-medium '>Billing details</h1>
                     <fieldset className='flex input-name gap-4'>
@@ -87,7 +87,7 @@ export default function Page() {
                         </thead>
                         <tbody>
                             {
-                                cartItems.map(item => {
+                                cartItems?.map(item => {
 
                                     totalPrice += item.price * item.quantity
 
