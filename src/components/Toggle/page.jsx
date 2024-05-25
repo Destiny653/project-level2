@@ -21,7 +21,7 @@ export default function Toggle() {
         { name: 'Login', href: '/login' },
         { name: 'Register', href: '/register' },
         { name: 'Cart', href: '/cart' },
-    ]
+    ]  
 
     return (
         <div className={`absolute only-screen ${change} nunitoextralight_italic`}>

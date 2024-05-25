@@ -1,13 +1,10 @@
-'use client'
-import { Collection } from 'mongoose'
-import React, { useContext, useEffect, useState } from 'react'
-import { revalidateTag } from 'next/cache';
-import './cart.css'
-import NavBar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/footer';
+'use client';
+import React, { useContext, useEffect, useState } from 'react';
+import './cart.css';
 import Link from 'next/link';
 import { CartContext } from '../../../context/CartContext';
 import Image from 'next/image';
+import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function Page() {
 
@@ -59,10 +56,10 @@ export default function Page() {
                         <tr>
                             <th className='text-left'>Image</th>
                             <th className='cart-title text-left'>Name</th>
-                            <th className='text-left'>UP</th>
-                            <th className='text-left'>Quantity</th>
-                            <th className='text-left'>Total</th>
-                            <th className='text-left'>Remove</th> 
+                            <th className='text-left'>Sum</th>
+                            <th className='text-left'>Qty</th>
+                            <th className='text-left'>Sum</th>
+                            <th className='text-left'>Cut</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -90,7 +87,7 @@ export default function Page() {
                                         </td>
                                         <td>{info?.price * Add}</td>
                                         <td>
-                                            <button onClick={() => handleAddToCart(info, Add, index)} >Remove</button>
+                                            <button onClick={() => handleAddToCart(info, Add, index)} ><FaRegTrashAlt className='text-red-600' size={30}/></button>
                                         </td>
                                     </tr>
                                 )

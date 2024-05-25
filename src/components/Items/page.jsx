@@ -69,14 +69,14 @@ export default function Items() {
 
 
   return (
-    <div className='flex flex-shrink-0 overflow-scroll justify-center items-center gap-3'>
+    <div className='detail-ex'>
       {PopUp()}
       {
         datatwo?.slice(0, 5).map((item, index) => {
           return (
-            <div key={item._id} className='item bg-white card-hover w-100 flex flex-col justify-center items-center box-border p-3 relative overflow-hidden rounded-xl gap-2'>
+            <div key={item._id} className='bg-white card-hover w-full flex flex-col justify-center items-center box-border p-3 relative overflow-hidden rounded-xl gap-2'>
               <Link href={`/${item._id}`}>
-                <Image className=' ' src={item.img} alt='content image' width={500} height={500} />
+                <Image src={item.img} alt='content image' width={500} height={500} />
               </Link>
               <h1 className=' text-xs nunitoextralight_italic font-normal ' style={{ color: 'gray' }}>{item.title.slice(0, 20).toUpperCase()}...</h1>
               <p className=' text-base font-normal'>{item.description}</p>

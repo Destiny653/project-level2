@@ -34,6 +34,8 @@
     .detail-p{
        display: flex;
        flex-direction: column;
+       box-sizing: border-box;
+       padding: auto 5px;
     }
     .detail1 {
          width: 100%;
