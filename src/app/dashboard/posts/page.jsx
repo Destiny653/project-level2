@@ -17,7 +17,7 @@ export default function Page() {
     useEffect(() => {
 
     async function getData() {
-        const result = await fetch('http://localhost:3000/api/products')
+        const result = await fetch('https://emoecom.vercel.app/api/products')
 
         if (!result.ok) {
             throw new Error('Faild to fetch data')
@@ -30,7 +30,7 @@ export default function Page() {
 }, [posts]);
 
     const deletePost = async (id) => {
-        const res = await fetch(`api/products/${id}`, {
+        const res = await fetch(`https://emoecom.vercel.app/api/products/${id}`, {
             method: 'DELETE'
         })
         if (res.status === 200) {
