@@ -1,3 +1,13 @@
+.product-item-list{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    gap: 0px;
+}
+.product-grid-sec{
+padding-right: 44px;
+}
+
 .grid-span {
     transform: translateY(8px);
 }
@@ -58,11 +68,11 @@
         flex-direction: column;
     }
     .product-pg {
-        font-size: 15px;
-        text-align: center;
+        font-size: 14px;
     }
     .product-grid-sec{
-        width: 80%;
+        width: 90%;
+        padding-right: 0;
     }
     .product-img-con{
         width: 80%;

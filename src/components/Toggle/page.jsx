@@ -21,7 +21,7 @@ export default function Toggle() {
         { name: 'Login', href: '/login' },
         { name: 'Register', href: '/register' },
         { name: 'Cart', href: '/cart' },
-    ]  
+    ]
 
     return (
         <div className={`absolute only-screen ${change} nunitoextralight_italic`}>
@@ -33,12 +33,16 @@ export default function Toggle() {
                         {
                             links.map((link, index) => (
                                 <Link key={index} href={link.href} className='w-full'>
-                                    <li  className='span-tag text border-b p-3 w-full'>
+                                    <li className='span-tag text border-b p-3 w-full'>
                                         {link.name}
                                     </li>
                                 </Link>
                             ))
                         }
+                        <div className='flex items-center gap-3 mt-2'>
+                        <span>Change theme</span>
+                            <DarkMode />
+                        </div>
                     </ul>
                     :
                     <ul key={12} className="ul-nav2" style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>

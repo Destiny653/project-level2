@@ -10,10 +10,7 @@ export const CartProvider = ({ children }) => {
 
 //force reload of page
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0 )
-    const [cartItems, setCartItems] = useState([])
-    const [store, setStore] = useState(0)
- 
-
+    const [cartItems, setCartItems] = useState([]) 
 
     function handleAddToCart(getCurrentItem, qty, placeIndex) {
         forceUpdate()
@@ -57,7 +54,7 @@ export const CartProvider = ({ children }) => {
     }, [])
 
     return (
-        <CartContext.Provider value={{ cartItems, store, handleAddToCart, forceUpdate}}>
+        <CartContext.Provider value={{ cartItems, handleAddToCart, forceUpdate}}>
             {children}
         </CartContext.Provider>
     )

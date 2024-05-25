@@ -11,12 +11,13 @@ import { FaStar } from "react-icons/fa";
 import { CartContext } from '../../../context/CartContext';
 import Link from 'next/link';
 import { ThemeContext } from '../../../context/ThemeContext';
-
-
+import { SearchContext } from '../../../context/SearchContext';
 
 export default function Page() {
-    const { handleAddToCart, store } = useContext(CartContext)
+
+    const { handleAddToCart} = useContext(CartContext)
     const { mode } = useContext(ThemeContext)
+    const {store} = useContext(SearchContext)
 
 
     const [display, setDisplay] = useState(false);
@@ -37,6 +38,7 @@ export default function Page() {
     useEffect(() => {
         getProduct();
     }, [data, display])
+
 
     const PopUp = () => {
 
@@ -74,6 +76,13 @@ export default function Page() {
           )
         }
       }
+
+
+      const returnSearch = data?.filter((item) => {
+        return (
+          store.toLocaleLowerCase() === " " ? item : item.title.toLocaleLowerCase().includes(store.toLocaleLowerCase())
+        )
+      })
     
 
 
@@ -125,14 +134,14 @@ export default function Page() {
                     <div>
                         {
                             display == false ?
-                                data.map((item, index) => (
-                                    <div key={item._id} style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='card-hover product-item-list  flex  items-center border-2  box-border w-full gap-2 p-3 rounded-xl mb-7 bg-white relative overflow-hidden '>
+                            data?.map((item, index) => (
+                                    <div key={item._id} style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='card-hover product-item-list  border-2  box-border w-full p-3 rounded-xl mb-7 bg-white relative overflow-hidden '>
                                         <div className='product-img-con w-2/6'>
                                             <Link href={`/${item._id}`}>
                                                 <Image className=' w-full' src={item.img} alt='content image' width={200} height={200} />
                                             </Link>
                                         </div>
-                                        <div className='nunitoextralight_italic product-grid-sec flex flex-col gap-4 pr-11 w-2/3 '>
+                                        <div className='nunitoextralight_italic product-grid-sec flex flex-col gap-4 w-2/3 '>
                                             <h1 className=' text-xs nunitoextralight_italic font-normal ' style={{ color: 'gray' }}>{item.title.toUpperCase()}</h1>
                                             <p className='product-pg text-base'>{item.description} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore libero harum dolorem sed et adipisci Consequatur voluptas error quibusdam voluptatibus. Illo quaerat non nobis ea asperiores.</p>
                                             <h1>
@@ -153,7 +162,7 @@ export default function Page() {
 
                                 <div className='grid grid-cols-3 gap-7 '>
 
-                                    {data.map((item, index) => {
+                                    {data?.map((item, index) => {
 
                                         return (
                                             <div key={item._id} style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='item product-item-list card-hover  flex flex-col justify-center items-center gap-3 box-border p-4 rounded-2xl relative overflow-hidden bg-white'>

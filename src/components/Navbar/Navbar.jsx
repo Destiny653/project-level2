@@ -13,13 +13,23 @@ import { CartContext } from '../../../context/CartContext';
 import { ThemeContext } from '../../../context/ThemeContext';
 import Toggle from '../Toggle/page';
 import Link from 'next/link';
+import SearchIn from '../Search-in/SearchIn';
+import { useRouter } from 'next/navigation';
+import { SearchContext } from '../../../context/SearchContext';
 
 export default function NavBar() {
 
+    const navigation = useRouter()
+    const { setStore } = useContext(SearchContext)
     const { cartItems } = useContext(CartContext)
     const { mode, change, setChange } = useContext(ThemeContext)
- 
 
+    const [searchValue, setSeacrchValue] = useState(" ")
+
+    if (searchValue !== " ") {
+        navigation.push('/products')
+    }
+    setStore(searchValue || ' ')
 
     const links = [
         { name: 'Home', href: '/' },
@@ -37,7 +47,8 @@ export default function NavBar() {
             <div className=" justify-center py-3 head-text ">
                 <p className=" text-xs text-center">GET 20% FOR ALL ORDERS IN THIS WEEK!</p>
             </div>
-            <div className="input-parent flex justify-between my-3 mx-2 mt-5">
+            <div><SearchIn /></div>
+            <div className="input-parent flex justify-between my-2 mx-2 mt-3">
                 <Image className='logo-img'
                     src="/img/icon-3.png"
                     alt="logo"
@@ -48,7 +59,7 @@ export default function NavBar() {
                     <select style={mode == 'black' ? { color: 'black' } : { color: 'black' }} name="category" id="" className="home-input-btn-l text text-xs w-3/12 pl-1 h-12 align-top">
                         <option >All Category</option>
                     </select>
-                    <input type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
+                    <input onChange={(e) => setSeacrchValue(e.target.value)} type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
                     <input type="button" value="Search" className="home-input-btn-r text align-top h-12 w-3/12 " />
                 </div>
                 <ul key={10} className="icon-nav flex gap-2">
@@ -59,12 +70,12 @@ export default function NavBar() {
             </div>
             <div className={` ${change} nav-head relative mt-6 text-white px-3 p-2`}>
                 <div className='flex items-center justify-between'>
-                    <div onClick={()=> setChange(change == false? true : false)} className={`${change} bug-con cursor-pointer `}>
+                    <div onClick={() => setChange(change == false ? true : false)} className={`${change} bug-con cursor-pointer `}>
                         <div className='bug bug1'></div>
                         <div className='bug bug1'></div>
                         <div className='bug bug2'></div>
                     </div>
-                    <Toggle/>
+                    <Toggle />
                     <ul className='ul-nav items-baseline'>
                         {
                             links.map((link, index) => (

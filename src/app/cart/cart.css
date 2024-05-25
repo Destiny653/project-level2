@@ -4,6 +4,11 @@
     border-bottom: 1px solid grey;
 }
 
+tbody tr:nth-child(even) {
+     background: #e9e9ec;
+ }
+    
+
 .table1 {
     border-collapse: separate;
     border-spacing: 0 0;

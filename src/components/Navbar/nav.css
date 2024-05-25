@@ -4,10 +4,11 @@
     margin-left: 5px;
     margin-right: 5px;
 }
- .ul-nav  {
+
+.ul-nav {
     display: flex;
     gap: 13px;
- }
+}
 
 .ul-nav li {
     border-radius: 10px;
@@ -72,7 +73,8 @@ Nav Icons
 .only-screen {
     display: none;
 }
-.logo-img{
+
+.logo-img {
     height: 50px;
     width: 100px;
 }
@@ -86,9 +88,9 @@ Nav Icons
 @media all and (max-width: 1100px) {
 
     .span-tag:hover,
-    .span-li:hover{
-       background-color: #fffefe;
-       color: #000;
+    .span-li:hover {
+        background-color: #fffefe;
+        color: #000;
     }
 
     .ul-nav,
@@ -109,22 +111,22 @@ Nav Icons
         width: 100%;
         border-radius: 20px;
         min-height: fit-content;
-     }
-     
-     .side-image-1-3 {
+    }
+
+    .side-image-1-3 {
         width: 100%;
         border-radius: 20px;
         min-height: fit-content;
-     }
- 
-     .img-1 {
+    }
+
+    .img-1 {
         width: 58%;
         max-height: min-content;
-     }
-     
-     .img-2 {
+    }
+
+    .img-2 {
         width: 20%;
-     }
+    }
 
     .bug {
         width: 28px;
@@ -152,44 +154,61 @@ Nav Icons
         position: absolute;
     }
 
-   .only-screen {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 50%;
-            background-color: #3f3b3b;
-            border-radius: 3px;
-            box-sizing: border-box;
-            padding: 12px;
-            transition: all 1s ease;
-            z-index: 2;
+    .only-screen {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        background-color: #3f3b3b;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 12px;
+        transition: all 1s ease;
+        z-index: 2;
     }
 
-  .false .only-screen::before {
+    .false+.only-screen::before {
         content: " ";
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.24) ;
+        background-color: rgba(0, 0, 0, 0.24);
         margin-right: 8px;
         padding: 6px;
         z-index: -1;
     }
-    .false + .only-screen{
+
+    .false+.only-screen::before {
+        content: " ";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.24);
+        margin-right: 8px;
+        padding: 6px;
+        z-index: -1;
+    }
+    .false+.only-screen::before {
+        display: none;
+    }
+    .false+.only-screen {
         transform: translateX(-700px);
     }
+
     .close {
-       right: -33px;
-       top: 0;
-       padding: 0 10px;
-       transition: all 4s ease;
+        right: -33px;
+        top: 0;
+        padding: 0 10px;
+        transition: all 4s ease;
     }
-  
+
 }
 
 /* 
@@ -198,33 +217,36 @@ Nav Icons
   ======================================
   */
 
-  @media all and (max-width: 700px) {
+@media all and (max-width: 700px) {
 
     .search-section {
         display: none;
     }
+
     .icon-nav {
         margin: auto;
         transform: scale(0.8);
         position: absolute;
         right: 0;
     }
+
     .input-parent {
         position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-     }
-     .ul-nav,
-     .cat-shop-container {
-         display: none;
-         width: 0;
-         overflow: hidden;
-     }
-  }
+    }
+
+    .ul-nav,
+    .cat-shop-container {
+        display: none;
+        width: 0;
+        overflow: hidden;
+    }
+}
 
 
-  /* 
+/* 
   ======================================
   screen sizing width (620px)
   ======================================
@@ -234,13 +256,15 @@ Nav Icons
 
     .only-screen {
         width: 60%;
-}
-.nav-switch {
-    font-size: 18px;
-}
+    }
+
+    .nav-switch {
+        font-size: 18px;
+    }
 
 }
-  /* 
+
+/* 
   ======================================
   screen sizing width (620px)
   ======================================
@@ -250,21 +274,24 @@ Nav Icons
 
     .only-screen {
         width: 70%;
-} 
-.social-icon {
-    /* transform: scale(0.6); */
-    size: 19px;
-    padding: 0;
-    gap: 2px;
-}
-.nav-switch {
-    font-size: 16px;
-}
-.ul-nav,
-.cat-shop-container {
-    display: none;
-    width: 0;
-    overflow: hidden;
-}
+    }
+
+    .social-icon {
+        /* transform: scale(0.6); */
+        size: 19px;
+        padding: 0;
+        gap: 2px;
+    }
+
+    .nav-switch {
+        font-size: 16px;
+    }
+
+    .ul-nav,
+    .cat-shop-container {
+        display: none;
+        width: 0;
+        overflow: hidden;
+    }
 
 }
