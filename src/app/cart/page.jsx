@@ -50,7 +50,7 @@ export default function Page() {
 
     return (
         <>
-            {isClient && <div className='cart-parent flex w-full justify-center gap-7 m-10 ml-0 box-border px-10 '>
+            {isClient && <div className='cart-parent flex w-full justify-center gap-7 m-10 ml-0 box-border px-1 '>
                 <table className='w-3/4 cart-table table1 '>
                     <thead>
                         <tr>
