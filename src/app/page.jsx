@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="parent-to-3 bg-gray-100 relative box-border mb-10 py-8 pt-4">
+      <div className="parent-to-3 bg-gray-100 relative box-border mb-10 py-8 pt-4 px-10">
         <div className="parent-to-3 flex justify-between gap-3 w-full ">
 
           <ul className="cat-shop-container bg-white " style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
