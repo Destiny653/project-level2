@@ -41,11 +41,11 @@ export default function Items() {
               <div className='flex'>
                 <section className=' pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2'>
                   <div className='box-border overflow-hidden rounded-md'>
-                    <Image src={datatwo[indexval]?.img} alt='cart item' height={300} width={300} />
+                    <Image src={indexval?.img} alt='cart item' height={300} width={300} />
                   </div>
                   <div className='flex flex-col justify-center gap-3'>
-                    <h1 className='text-base font-semibold '>{datatwo[indexval]?.title.slice(0, 26)}</h1>
-                    <h2 className='text-base font-semibold text-red-600'>{datatwo[indexval]?.price}</h2>
+                    <h1 className='text-base font-semibold '>{indexval?.title.slice(0, 26)}</h1>
+                    <h2 className='text-base font-semibold text-red-600'>{indexval?.price}</h2>
                     <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
                   </div>
                 </section>
@@ -87,7 +87,7 @@ export default function Items() {
                 <FaStar color='gold' className='inline' />
               </h1>
               <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
-              <button onClick={() => { handleAddToCart(item); setIndexval(index); setSelected(true) }} className=' btn-bg text-sm  nunitoextralight_italicextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
+              <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className=' btn-bg text-sm  nunitoextralight_italicextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
               <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
               <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
               <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />

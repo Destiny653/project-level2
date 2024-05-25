@@ -81,11 +81,11 @@ export default function Hero() {
               <div className='flex pop-limit'>
                 <section className=' pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2 '>
                   <div className='box-border overflow-hidden rounded-md'>
-                    <Image src={datatwo[indexval]?.img} alt='cart item' height={300} width={300} />
+                    <Image src={indexval?.img} alt='cart item' height={300} width={300} />
                   </div>
                   <div className='flex flex-col justify-center gap-3'>
-                    <h1 className='text-base font-semibold '>{datatwo[indexval]?.title.slice(0, 26)}</h1>
-                    <h2 className='text-base font-semibold text-red-600'>{datatwo[indexval]?.price}</h2>
+                    <h1 className='text-base font-semibold '>{indexval?.title.slice(0, 26)}</h1>
+                    <h2 className='text-base font-semibold text-red-600'>{indexval?.price}</h2>
                     <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
                   </div>
                 </section>
@@ -169,7 +169,7 @@ export default function Hero() {
           </section>
           <section className='deals-of-day-p w-2/4 mt-3    mx-6 flex justify-center items-center gap-5 '>
             {
-              datatwo.slice(8, 11).map((item, index) => {
+              datatwo?.slice(7, 9).map((item, index) => {
                 return (
                   <div key={item._id} className='deals-of-day-i card-hover nunitoextralight_italic flex justify-center items-center flex-col box-border p-2 py-8 relative overflow-hidden bg-white gap-3 rounded-3xl' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
                     <Link href={`/${item._id}`}>
@@ -184,7 +184,7 @@ export default function Hero() {
                       <FaStar color='gold' className='inline' />
                     </h1>
                     <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
-                    <button onClick={() => { handleAddToCart(item); setIndexval(index); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
+                    <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
                     <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
                     <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                     <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
@@ -201,7 +201,7 @@ export default function Hero() {
           </section>
           <section className='arrivals-p flex justify-center items-center gap-4 box-border p-4'>
             {
-              datatwo.slice(0, 5).map((item, index) => {
+              datatwo?.slice(0, 5).map((item, index) => {
                 return (
                   <div key={item._id} className='bg-white  relative  card-hover w-100 flex flex-col justify-center items-center gap-3 box-border overflow-hidden p-4 rounded-2xl ' style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
                     <Link href={`/${item._id}`}>
@@ -216,7 +216,7 @@ export default function Hero() {
                       <FaStar color='gold' className='inline' />
                     </h1>
                     <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
-                    <button onClick={() => { handleAddToCart(item); setIndexval(index); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold bg-neutral-100 px-9 py-3 nunitoextralight_italic rounded-xl '>ADD TO CART</button>
+                    <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold bg-neutral-100 px-9 py-3 nunitoextralight_italic rounded-xl '>ADD TO CART</button>
                     <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
                     <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                     <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />

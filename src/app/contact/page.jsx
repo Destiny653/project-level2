@@ -49,14 +49,12 @@ const Page = () => {
                     <label className={`lebel-small`}>
                         <input className={`input-small`} type="text" name='name' ref={form} placeholder="Name" />
                     </label>
-                    <fieldset className='flex w-full justify-center items-center gap-3'>
                         <label className={`lebel-small w-full`}>
                             <input className={`input-small w-full`} type="email" name='email' ref={form} placeholder="ex = name@gmail.com" />
                         </label>
                         <label className={`lebel-small w-full`}>
                             <input className={`input-small`} type="tel" name='phone' ref={form} placeholder='Phone number' />
                         </label>
-                    </fieldset>
                     <label className={`lebel-small`}>
                         <textarea className={`input-samll`} name="message" id="textArea" ref={form} cols="6" rows="4" placeholder='Your message'></textarea>
                     </label>
