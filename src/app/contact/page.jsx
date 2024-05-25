@@ -5,7 +5,7 @@ import 'notyf/notyf.min.css';
 import emailjs from '@emailjs/browser';
 import '../homepage.css';
 import { ThemeContext } from '../../../context/ThemeContext';
-import 'contact.css';
+import './contact.css';
 
 
 const Page = () => {
