@@ -74,7 +74,7 @@ export default function Items() {
       {
         datatwo?.slice(0, 5).map((item, index) => {
           return (
-            <div key={item._id} className='bg-white card-hover w-full flex flex-col justify-center items-center box-border p-3 relative overflow-hidden rounded-xl gap-2'>
+            <div key={item._id} className='item bg-white card-hover w-full flex flex-col justify-center items-center box-border p-3 relative overflow-hidden rounded-xl gap-2'>
               <Link href={`/${item._id}`}>
                 <Image src={item.img} alt='content image' width={500} height={500} />
               </Link>

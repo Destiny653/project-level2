@@ -1,20 +1,22 @@
 'use client'
 import React, { useContext, useRef } from 'react';
+import style from './contact.module.css';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import emailjs from '@emailjs/browser';
-import '../homepage.css';
+import '../../app/homepage.css';
 import { ThemeContext } from '../../../context/ThemeContext';
-import 'contact.css';
 
 
-const Page = () => {
+const ContactF = () => {
 
     const {mode} = useContext(ThemeContext)
 
 
     const form = useRef()
-   
+    //    const {toggle,mode} = useContext(ThemeContext)
+
+    //declare notification variable
 
     const handleEmail = (e) => {
 
@@ -44,27 +46,27 @@ const Page = () => {
 
     return (
         <>
-            <div className={`container-small`} style={mode == 'light' ? {color:'black'} : {color:'black'}}>
-                <form className={`form-small`} ref={form} onSubmit={handleEmail} action='' method='post'>
-                    <label className={`lebel-small`}>
-                        <input className={`input-small`} type="text" name='name' ref={form} placeholder="Name" />
+            <div className={` ${style.container} foot-contact`} style={mode == 'light' ? {color:'black'} : {color:'black'}}>
+                <form className={style.form} ref={form} onSubmit={handleEmail} action='' method='post'>
+                    <label className={style.lebel}>
+                        <input className={style.input} type="text" name='name' ref={form} placeholder="Name" />
                     </label>
                     <fieldset className='flex w-full justify-center items-center gap-3'>
-                        <label className={`lebel-small w-full`}>
-                            <input className={`input-small w-full`} type="email" name='email' ref={form} placeholder="ex = name@gmail.com" />
+                        <label className={`${style.lebel} w-full`}>
+                            <input className={`${style.input} w-full`} type="email" name='email' ref={form} placeholder="ex = name@gmail.com" />
                         </label>
-                        <label className={`lebel-small w-full`}>
-                            <input className={`input-small`} type="tel" name='phone' ref={form} placeholder='Phone number' />
+                        <label className={`${style.lebel} w-full`}>
+                            <input className={style.input} type="tel" name='phone' ref={form} placeholder='Phone number' />
                         </label>
                     </fieldset>
-                    <label className={`lebel-small`}>
-                        <textarea className={`input-samll`} name="message" id="textArea" ref={form} cols="6" rows="4" placeholder='Your message'></textarea>
+                    <label className={style.lebel}>
+                        <textarea className={style.input} name="message" id="textArea" ref={form} cols="6" rows="4" placeholder='Your message'></textarea>
                     </label>
-                    <button className={`button-small`}>Send</button>
+                    <button className={style.button}>Send</button>
                 </form>
             </div>
         </>
     )
 }
 
-export default Page
+export default ContactF

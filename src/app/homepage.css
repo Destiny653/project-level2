@@ -188,7 +188,6 @@ Nav
 
   @media all and (max-width: 700px) {
 
-
    .parent-to-3 {
       width: 100%;
    }
@@ -199,7 +198,7 @@ Nav
       width: 100%;
       height: 290px;
       margin: auto;
-      border-radius: 30px;
+      border-radius: 32px;
    }
 
 

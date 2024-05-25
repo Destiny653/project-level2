@@ -3,7 +3,7 @@ import { TfiYoutube } from 'react-icons/tfi';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa6';
 import Link from 'next/link';
 import './footer.css';
-import Contact from '@/app/contact/page';
+import Contact from '@/components/ContactF/ContactF';
 
 
 export default function Footer() {
