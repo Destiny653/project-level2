@@ -17,27 +17,29 @@ export default function Page() {
 
     const { handleAddToCart} = useContext(CartContext)
     const { mode } = useContext(ThemeContext)
-    const {store} = useContext(SearchContext)
-
-
+    const {store, store2, setStore} = useContext(SearchContext)
+    console.log(store);
+    console.log(store2);
+    
+    const [obtain, setObtain] = useState(" ")
     const [display, setDisplay] = useState(false);
     const [data, setData] = useState([]);
     const [selected, setSelected] = useState(false)
     const [indexval, setIndexval] = useState(0)
-
+    
+    useEffect(() => {
     async function getProduct() {
-        const res = await fetch('api/products');
-
+        const res = await fetch('api/products'); 
         if (!res.ok) {
             throw new Error('faild to fetch data')
         }
-        
         setData(await res.json())
     }
-
-    useEffect(() => {
-        getProduct();
-    }, [data, display])
+    console.log(data);
+      getProduct();
+      setObtain( store == " "? store2 : store)
+   console.log(obtain);
+    }, [display, store, store2])
 
 
     const PopUp = () => {
@@ -77,12 +79,16 @@ export default function Page() {
         }
       }
 
-
-      const returnSearch = data?.filter((item) => {
+ 
+          const returnSearch = data?.filter((item) =>{
         return (
-          store.toLocaleLowerCase() === " " ? item : item.title.toLocaleLowerCase().includes(store.toLocaleLowerCase())
+          obtain.toLocaleLowerCase() === " " ? item : item.title.toLocaleLowerCase().includes(obtain.toLocaleLowerCase())
         )
       })
+
+      console.log(returnSearch);
+      let returnSearchQty = returnSearch.length
+ 
     
 
 
@@ -96,13 +102,13 @@ export default function Page() {
                         <ul style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='w-full nunitoextralight_italic flex flex-col gap-4 box-border p-3 bg-white rounded-lg '>
                             <h1 className=' text-xl nunitoextralight_italic'>Filter Categories</h1>
                             <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Uncategorized</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Bread & Bakery</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Butter & Eggs</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Canned Organic</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Fresh Fruits</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Fresh Meat</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Milk & Cream</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Vegitables</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Bread & Bakery')} /><span>Bread & Bakery</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Butter & Eggs')} /><span>Butter & Eggs</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Canned Organic')} /><span>Canned Organic</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Fresh Fruits')} /><span>Fresh Fruits</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Fresh Meat')} /><span>Fresh Meat</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Milk & Cream')} /><span>Milk & Cream</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Vegitables')} /><span>Vegitables</span></li>
                         </ul>
                     </section>
                     <section className='w-full '>
@@ -122,7 +128,7 @@ export default function Page() {
                         </select>
                         <div className='flex gap-2'>
                             <span className=' align-middle flex items-center'>Show:</span>
-                            <button className='border  px-4 py-1 pb-0 rounded-md '>12</button>
+                            <button className='border  px-4 py-1 pb-0 rounded-md '>{returnSearchQty}</button>
                         </div>
                         <div className='flex gap-3 relative'>
                             <FaListUl size={30} onClick={() => setDisplay(false)} className=' grid-i p-1 cursor-pointer rounded-md box-content  ' />
@@ -134,7 +140,7 @@ export default function Page() {
                     <div>
                         {
                             display == false ?
-                            data?.map((item, index) => (
+                            returnSearch?.map((item, index) => (
                                     <div key={item._id} style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='card-hover product-item-list  border-2  box-border w-full p-3 rounded-xl mb-7 bg-white relative overflow-hidden '>
                                         <div className='product-img-con w-2/6'>
                                             <Link href={`/${item._id}`}>
@@ -162,7 +168,7 @@ export default function Page() {
 
                                 <div className='grid grid-cols-3 gap-7 '>
 
-                                    {data?.map((item, index) => {
+                                    {returnSearch?.map((item, index) => {
 
                                         return (
                                             <div key={item._id} style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='item product-item-list card-hover  flex flex-col justify-center items-center gap-3 box-border p-4 rounded-2xl relative overflow-hidden bg-white'>

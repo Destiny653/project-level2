@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
     function handleAddToCart(getCurrentItem, qty, placeIndex) {
         forceUpdate()
         let cart = cartItems ?? []
-        let idProduct = getCurrentItem._id
+        let idProduct = getCurrentItem?._id
         let price = getCurrentItem.price
         let title = getCurrentItem.title
         let position = cart?.findIndex(value => value.product_id === idProduct);

@@ -8,10 +8,14 @@ import { ThemeContext } from '../../../context/ThemeContext';
 import '../Navbar/nav.css'
 import Link from 'next/link';
 import DarkMode from '../DarkModeToggle/DarkMode';
+import { SearchContext } from '../../../context/SearchContext';
+import { useRouter } from 'next/navigation';
 
 export default function Toggle() {
     const { mode, change, setChange } = useContext(ThemeContext)
+    const {setStore2} = useContext(SearchContext)
     const [vertical, setVertical] = useState(false)
+    const navigation = useRouter()
 
 
     const links = [
@@ -47,14 +51,15 @@ export default function Toggle() {
                     :
                     <ul key={12} className="ul-nav2" style={mode == 'black' ? { color: 'black' } : { color: 'black' }}>
                         <h1 className="bg-red-700 py-3 pl-3 text-white">SHOP BY CATEGORIES</h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><LuPalmtree className=" inline" size={22} /> Vegitables</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><LuApple className=" inline" size={22} /> Fresh Fruits</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><TbMeat className=" inline" size={22} /> Fresh Meat</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><GiMasonJar className=" inline" size={22} />Canned Organic</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><GiEasterEgg className=" inline" size={22} />Butter & Eggs</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><LuMilk className=" inline" size={22} /> Milk & Cream</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><GiMasonJar className=" inline" size={22} />Oil & Vinegars</li></h1>
-                        <h1 className="text-white span-li"><li className=" px-3 py-3" ><PiBreadBold className=" inline" size={22} /> Bread & Bakery</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2(' '); navigation.push('/products')}} >All</li></h1>              
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('vegitables'); navigation.push('/products')}} ><LuPalmtree className=" inline" size={22} /> Vegitables</li></h1>              
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('fruits'); navigation.push('/products')}} ><LuApple className=" inline" size={22} /> Fresh Fruits</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('meat'); navigation.push('/products')}} ><TbMeat className=" inline" size={22} /> Fresh Meat</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('canned organic'); navigation.push('/products')}} ><GiMasonJar className=" inline" size={22} />Canned Organic</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('butter & eggs'); navigation.push('/products')}} ><GiEasterEgg className=" inline" size={22} />Butter & Eggs</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('milk & cream'); navigation.push('/products')}} ><LuMilk className=" inline" size={22} /> Milk & Cream</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('oil & vinegar'); navigation.push('/products')}} ><GiMasonJar className=" inline" size={22} />Oil & Vinegars</li></h1>
+                        <h1 className="text-white span-li"><li className=" px-3 py-3" onClick={()=>{setStore2('bread & bakery'); navigation.push('/products')}} ><PiBreadBold className=" inline" size={22} /> Bread & Bakery</li></h1>
                     </ul>
             }
         </div >

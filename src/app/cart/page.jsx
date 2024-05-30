@@ -81,9 +81,11 @@ export default function Page() {
                                         <td className='cart-title-name'>{info?.title.slice(0, 15)}</td>
                                         <td>{info?.price}</td>
                                         <td>
-                                            <button className='px-3 py-1 bg-lime-600 rounded-full hover:bg-orange-500 ' onClick={() => { handleAddToCart(info, Add); }}>- </button>
-                                            {Add}
-                                            <button className='px-2.5 py-1 bg-lime-600 rounded-full box-border hover:bg-orange-500 ' onClick={() => { handleAddToCart(info); }}>+</button>
+                                            <div className='border bg-lime-600 w-fit  hover:bg-orange-500 box-border px-2 py-1'>
+                                            <button onClick={() => { handleAddToCart(info, Add); }}>- </button>
+                                            <span className='  px-3 py-1 rounded-full'>{Add}</span>
+                                            <button onClick={() => { handleAddToCart(info); }}>+</button>
+                                            </div>
                                         </td>
                                         <td>{info?.price * Add}</td>
                                         <td>

@@ -26,7 +26,7 @@ export default function NavBar() {
 
     const [searchValue, setSeacrchValue] = useState(" ")
  
-    setStore(searchValue || ' ')
+    setStore(searchValue ?? ' ')
 
     const links = [
         { name: 'Home', href: '/' },
@@ -56,8 +56,8 @@ export default function NavBar() {
                     <select style={mode == 'black' ? { color: 'black' } : { color: 'black' }} name="category" id="" className="home-input-btn-l text text-xs w-3/12 pl-1 h-12 align-top">
                         <option >All Category</option>
                     </select>
-                    <input onChange={(e) => setSeacrchValue(e.target.value)} type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
-                    <input type="button" value="Search" className="home-input-btn-r text align-top h-12 w-3/12 " />
+                    <input value={searchValue} onChange={(e) => setSeacrchValue(e.target.value)} type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
+                    <input type="button" value="Search" onClick={()=> navigation.push('/products')} className="home-input-btn-r text align-top h-12 w-3/12 " />
                 </div>
                 <ul key={10} className="icon-nav flex gap-2">
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><Link href='/cart'><IoCartOutline /></Link><span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-0 bg-red-600 text-white  '>{cartItems ? cartItems?.length : 0}</span></li>
