@@ -41,7 +41,7 @@
  
     .like-items {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 12px;
     }
 
@@ -55,9 +55,9 @@
 
  @media all and (max-width: 340px) {
  
-        .like-items {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 12px;
-        }
+    .like-items {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+    }
  }
