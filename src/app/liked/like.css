@@ -1,13 +1,13 @@
  
-.search-items {
+.like-items {
     box-sizing: border-box;
     padding-top: 25px;
     padding: 14px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 10px;
 }
-.search-item {
+.like-item {
     border-radius: 15px;
     display: flex;
 }
@@ -20,12 +20,12 @@
 
  @media all and (max-width: 800px) {
 
-    .search-items {
+    .like-items {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
     }
-    .search-pg {
+    .like-pg {
         font-size: 14px;
     }
  }
@@ -39,7 +39,7 @@
 
  @media all and (max-width: 490px) {
  
-    .search-items {
+    .like-items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -55,7 +55,7 @@
 
  @media all and (max-width: 340px) {
  
-        .search-items {
+        .like-items {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 12px;

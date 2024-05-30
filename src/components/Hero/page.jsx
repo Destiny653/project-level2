@@ -16,6 +16,7 @@ import { GiSelfLove } from "react-icons/gi";
 import { CartContext } from '../../../context/CartContext';
 import Link from 'next/link';
 import { ThemeContext } from '../../../context/ThemeContext';
+import { SearchContext } from '../../../context/SearchContext';
 
 
 
@@ -35,6 +36,7 @@ export default function Hero() {
 
   const { mode } = useContext(ThemeContext)
   const { handleAddToCart} = useContext(CartContext)
+  const {handleLiked} = useContext(SearchContext)
   const [selected, setSelected] = useState(false)
   const [indexval, setIndexval] = useState(0)
 
@@ -185,7 +187,7 @@ export default function Hero() {
                     </h1>
                     <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
                     <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
-                    <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
+                    <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} onClick={()=>handleLiked(item)} />
                     <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                     <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
                   </div>

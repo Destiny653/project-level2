@@ -19,18 +19,18 @@ export default function Toggle() {
 
 
     const links = [
-        { name: 'Home', href: '/' },
-        { name: 'Checkout', href: '/checkout' },
-        { name: 'Dashboard', href: '/dashboard/posts' },
-        { name: 'Login', href: '/login' },
-        { name: 'Register', href: '/register' },
-        { name: 'Cart', href: '/cart' },
+        {name: 'Home', href: '/'},
+        {name: 'Checkout', href: '/checkout' },
+        {name: 'Dashboard', href: '/dashboard/posts'},
+        {name: 'Login', href: '/login' },
+        {name: 'Register', href: '/register'},
+        {name: 'Cart', href: '/cart'},
     ]
 
     return (
         <div className={`absolute only-screen ${change} nunitoextralight_italic`}>
             <button onClick={() => setChange(false)} className='text-2xl bg-red-600 close absolute'>x</button>
-            <div className='flex justify-center items-center cursor-pointer bg-white h-12 '><h1 onClick={() => setVertical(true)} className=' text-black w-2/4 box-border h-full pt-3 pl-5 cursor-pointer nav-switch '>Nav Menu</h1><h1 onClick={() => setVertical(false)} className=' text-black box-border w-2/4 pl-5 bg-slate-200 pt-3 h-full cursor-pointer nav-switch'>Catrgory</h1></div>
+            <div className='flex justify-center items-center cursor-pointer bg-white h-12 '><h1 onClick={() => setVertical(true)} className=' text-black w-2/4 box-border h-full pt-3 pl-5 cursor-pointer nav-switch '>Nav Menu</h1><h1 onClick={() => setVertical(false)} className=' text-black box-border w-2/4 pl-5 bg-slate-200 pt-3 h-full cursor-pointer nav-switch'>Category</h1></div>
             {
                 vertical == true ?
                     <ul className='ul-nav3 flex flex-col items-baseline'>

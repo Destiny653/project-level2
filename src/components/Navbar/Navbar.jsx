@@ -6,7 +6,7 @@ import { TfiYoutube } from 'react-icons/tfi';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa6';
 import { GrLanguage } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
-import { FaRegCircleUser } from "react-icons/fa6";
+import { GiSelfLove } from "react-icons/gi";
 import DarkMode from '../DarkModeToggle/DarkMode';
 import Image from 'next/image';
 import { CartContext } from '../../../context/CartContext';
@@ -20,9 +20,10 @@ import { SearchContext } from '../../../context/SearchContext';
 export default function NavBar() {
 
     const navigation = useRouter()
-    const { setStore } = useContext(SearchContext)
+    const { setStore, love } = useContext(SearchContext)
     const { cartItems } = useContext(CartContext)
     const { mode, change, setChange } = useContext(ThemeContext)
+
 
     const [searchValue, setSeacrchValue] = useState(" ")
  
@@ -52,16 +53,17 @@ export default function NavBar() {
                     width={160}
                     height={40}
                 />
-                <div className="text scale search-section">
+                <div className="text scale search-section relative">
                     <select style={mode == 'black' ? { color: 'black' } : { color: 'black' }} name="category" id="" className="home-input-btn-l text text-xs w-3/12 pl-1 h-12 align-top">
                         <option >All Category</option>
                     </select>
+                    <span onClick={()=> setSeacrchValue(" ")} className='absolute right-28  top-3 text-black text-sm rounded-full font-semibold bg-slate-100 px-1.5 py-0 hover:bg-amber-500 cursor-pointer'>x</span>
                     <input value={searchValue} onChange={(e) => setSeacrchValue(e.target.value)} type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
                     <input type="button" value="Search" onClick={()=> navigation.push('/products')} className="home-input-btn-r text align-top h-12 w-3/12 " />
                 </div>
                 <ul key={10} className="icon-nav flex gap-2">
-                    <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><Link href='/cart'><IoCartOutline /></Link><span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-0 bg-red-600 text-white  '>{cartItems ? cartItems?.length : 0}</span></li>
-                    <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90"><FaRegCircleUser /></li>
+                    <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><Link href='/cart'><IoCartOutline /></Link><span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-0 bg-orange-500 text-white  '>{cartItems ? cartItems.length : 0}</span></li>
+                    <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90 relative"><Link href='/liked'><GiSelfLove/></Link> <span className='absolute size-7 cart-length  rounded-full p-1 top-0 left-2 bg-lime-400  text-white  '>{love? love.length : 0}</span></li>
                     <li className=" home-icon bg-gray-300 rounded-xl h-8 p-2 pb-10  text-3xl scale-90"><GrLanguage /></li>
                 </ul>
             </div>

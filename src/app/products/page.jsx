@@ -17,7 +17,7 @@ export default function Page() {
 
     const { handleAddToCart} = useContext(CartContext)
     const { mode } = useContext(ThemeContext)
-    const {store, store2, setStore} = useContext(SearchContext)
+    const {store, store2, touched, setTouched, handleLiked} = useContext(SearchContext)
     console.log(store);
     console.log(store2);
     
@@ -37,7 +37,8 @@ export default function Page() {
     }
     console.log(data);
       getProduct();
-      setObtain( store == " "? store2 : store)
+      // setObtain( store == " "? store2 : store)
+      setObtain(store == " "? store2 : store2 == " " ? store : touched)
    console.log(obtain);
     }, [display, store, store2])
 
@@ -102,13 +103,13 @@ export default function Page() {
                         <ul style={mode == 'black' ? { color: 'black' } : { color: 'black' }} className='w-full nunitoextralight_italic flex flex-col gap-4 box-border p-3 bg-white rounded-lg '>
                             <h1 className=' text-xl nunitoextralight_italic'>Filter Categories</h1>
                             <li className='flex gap-2' ><input type="checkbox" name="items" /><span>Uncategorized</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Bread & Bakery')} /><span>Bread & Bakery</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Butter & Eggs')} /><span>Butter & Eggs</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Canned Organic')} /><span>Canned Organic</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Fresh Fruits')} /><span>Fresh Fruits</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Fresh Meat')} /><span>Fresh Meat</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Milk & Cream')} /><span>Milk & Cream</span></li>
-                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setStore('Vegitables')} /><span>Vegitables</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Bread & Bakery')} /><span>Bread & Bakery</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Butter & Eggs')} /><span>Butter & Eggs</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Canned Organic')} /><span>Canned Organic</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Fresh Fruits')} /><span>Fresh Fruits</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Fresh Meat')} /><span>Fresh Meat</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Milk & Cream')} /><span>Milk & Cream</span></li>
+                            <li className='flex gap-2' ><input type="checkbox" name="items" onClick={()=>setTouched('Vegitables')} /><span>Vegitables</span></li>
                         </ul>
                     </section>
                     <section className='w-full '>
@@ -158,7 +159,7 @@ export default function Page() {
                                             </h1>
                                             <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
                                             <button onClick={() => {handleAddToCart(item); setIndexval(item); setSelected(true)}} className=' product-grid-btn btn-bg text-base nunitoextralight_italic font-semibold bg-neutral-100 px-9 py-3 rounded-lg nunitoextralight_italic'>ADD TO CART</button>
-                                            <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
+                                            <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} onClick={()=> handleLiked(item)} />
                                             <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                                             <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
                                         </div>
@@ -184,7 +185,7 @@ export default function Page() {
                                                 <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
 
                                                 <button onClick={() => {handleAddToCart(item); setIndexval(item); setSelected(true)}} className=' btn-bg text-sm  nunitoextralight_italic font-semibold bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
-                                                <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
+                                                <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} onClick={()=> handleLiked(item)} />
                                                 <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                                                 <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
                                             </div>
