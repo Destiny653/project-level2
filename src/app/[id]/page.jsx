@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaStar } from "react-icons/fa";
 import Items from '@/components/Items/page';
 import { CartContext } from '../../../context/CartContext';
+import Link from 'next/link';
 
 
 
