@@ -82,9 +82,9 @@ export default function Page() {
                                         <td>{info?.price}</td>
                                         <td>
                                             <div className='border bg-lime-600 w-fit  hover:bg-orange-500 box-border px-2 py-1 text-white'>
-                                                <button className=' bg-lime-600' onClick={() => { handleAddToCart(info, Add); }}>- </button>
+                                                <button className=' bg-inherit' onClick={() => { handleAddToCart(info, Add); }}>- </button>
                                                 <span className='  px-3 py-1 rounded-full'>{Add}</span>
-                                                <button className=' bg-lime-600' onClick={() => { handleAddToCart(info); }}>+</button>
+                                                <button className=' bg-inherit' onClick={() => { handleAddToCart(info); }}>+</button>
                                             </div>
                                         </td>
                                         <td>{info?.price * Add}</td>
