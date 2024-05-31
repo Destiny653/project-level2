@@ -8,10 +8,10 @@ import { CartContext } from '../../../context/CartContext'
 export default function SearchIn() {
 
   const navigation = useRouter()
-  const {forceUpdate} = useContext(CartContext)
+  const { forceUpdate } = useContext(CartContext)
   const { setStore2 } = useContext(SearchContext)
   const [searchValue, setSeacrchValue] = useState(' ')
-  
+
   // if (searchValue == " "){
   //   navigation.push('/products')
   // }
@@ -20,12 +20,11 @@ export default function SearchIn() {
 
   return (
     <>
-      <label className='search-block relative' htmlFor="text">
-      <div className='relative inline'>
-      <span onClick={()=> setSeacrchValue(" ")} className='absolute right-1   top-0.5 text-black text-sm rounded-full font-semibold bg-slate-100 px-1.5 py-0 hover:bg-amber-500 cursor-pointer'>x</span>
-        <input value={searchValue} className='search-input' type="text" name='text' autoComplete='true' onChange={(e) => {setSeacrchValue(e.target.value); forceUpdate()}} />
-      </div>
-        <button onClick={()=> {searchValue !== " " && navigation.push('/products');  forceUpdate() }} className='search-btn text-white' >Search</button>
+      <label className='search-block ' htmlFor="text">
+        <input value={searchValue} className='search-input w-full' type="text" name='text' autoComplete='true' onChange={(e) => { setSeacrchValue(e.target.value); forceUpdate() }} />
+        <button onClick={() => { searchValue !== " " && navigation.push('/products'); forceUpdate() }} className='search-btn text-white relative' >Search
+          <span onClick={() => setSeacrchValue(" ")} className='absolute -left-8   top-3 text-black text-sm rounded-full font-semibold bg-slate-100 px-1.5 py-0 hover:bg-amber-500 cursor-pointer'>x</span>
+        </button>
       </label>
     </>
   )
