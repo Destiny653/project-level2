@@ -250,6 +250,7 @@ keyFrames
         font-size: 30px;
     }
 
+
     .arrivals-p :nth-child(2){
         display: none;
     }
@@ -324,6 +325,10 @@ keyFrames
 
     .service-block {
         width: 100%;
+    }
+    
+    .arrivals-p {
+        gap: 8px;
     }
 
     .service-img,

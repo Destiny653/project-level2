@@ -187,7 +187,7 @@ export default function Hero() {
                     </h1>
                     <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
                     <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
-                    <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} onClick={()=>handleLiked(item)} />
+                    <GiSelfLove className='absolute top-4 right-3 trans1 active:bg-orange-500 active:text-white' size={35} onClick={()=>handleLiked(item)} />
                     <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                     <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
                   </div>
@@ -219,7 +219,7 @@ export default function Hero() {
                     </h1>
                     <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
                     <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className='btn-bg text-sm  nunitoextralight_italic font-semibold bg-neutral-100 px-9 py-3 nunitoextralight_italic rounded-xl '>ADD TO CART</button>
-                    <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} />
+                    <GiSelfLove className='absolute top-4 right-3 trans1 ' size={35} onClick={()=>handleLiked(item)} />
                     <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
                     <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
                   </div>

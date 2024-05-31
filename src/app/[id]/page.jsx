@@ -4,6 +4,7 @@ import './detail.css'
 import Image from 'next/image';
 import { FaStar } from "react-icons/fa";
 import Items from '@/components/Items/page';
+import { CartContext } from '../../../context/CartContext';
 
 
 
@@ -21,6 +22,8 @@ async function newData(id) {
 
 
 export default async function page({ params }) {
+
+    const {handleAddToCart} = useContext(CartContext)
     
     const { id } = params;
     const data = await newData(id)
@@ -46,7 +49,7 @@ export default async function page({ params }) {
                         </h1>
                         <h1 className='text-4xl font-bold text-orange-400 '>${data.price}</h1>
                         <div className='flex gap-5'>
-                            <button  className='px-9 py-2 bg-lime-600 text-white text-base nunitoextralight_italic font-semibold rounded-full '>ADD TO CART</button>
+                            <button  className='px-9 py-2 bg-lime-600 text-white text-base nunitoextralight_italic font-semibold rounded-full ' onClick={()=>handleAddToCart(data)}>ADD TO CART</button>
                         </div>
                     </section>
                 </div>

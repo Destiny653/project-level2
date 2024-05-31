@@ -8,7 +8,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function Page() {
 
-    const { cartItems, handleAddToCart } = useContext(CartContext)
+    const { cartItems, handleAddToCart, emptyCart } = useContext(CartContext)
     const [newCart, setNewCart] = useState([])
     let totalPrice = 0
 
@@ -59,11 +59,11 @@ export default function Page() {
                             <th className='text-left'>Sum</th>
                             <th className='text-left'>Qty</th>
                             <th className='text-left'>Sum</th>
-                            <th className='text-left'>Cut</th> 
+                            <th className='text-left'>Cut</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {cartItems?.length !== 0 ?
+                        {!cartItems == [] ?
                             cartItems?.map((item, index) => {
 
                                 let position = newCart.findIndex((value) => value._id === item.product_id);
@@ -81,22 +81,26 @@ export default function Page() {
                                         <td className='cart-title-name'>{info?.title.slice(0, 15)}</td>
                                         <td>{info?.price}</td>
                                         <td>
-                                            <div className='border bg-lime-600 w-fit  hover:bg-orange-500 box-border px-2 py-1'>
-                                            <button onClick={() => { handleAddToCart(info, Add); }}>- </button>
-                                            <span className='  px-3 py-1 rounded-full'>{Add}</span>
-                                            <button onClick={() => { handleAddToCart(info); }}>+</button>
+                                            <div className='border bg-lime-600 w-fit  hover:bg-orange-500 box-border px-2 py-1 text-white'>
+                                                <button onClick={() => { handleAddToCart(info, Add); }}>- </button>
+                                                <span className='  px-3 py-1 rounded-full'>{Add}</span>
+                                                <button onClick={() => { handleAddToCart(info); }}>+</button>
                                             </div>
                                         </td>
                                         <td>{info?.price * Add}</td>
                                         <td>
-                                            <button onClick={() => handleAddToCart(info, Add, index)} ><FaRegTrashAlt className='text-red-600' size={30}/></button>
+                                            <button onClick={() => handleAddToCart(info, Add, index)} ><FaRegTrashAlt className='text-red-600' size={30} /></button>
                                         </td>
                                     </tr>
                                 )
                             }) :
+
                             <h1 className=' m-auto text-2xl'>Your Cart is empty</h1>
                         }
                     </tbody>
+                    <Link href='/cart'>
+                        <button onClick={() => emptyCart()} className=' bg-orange-400 rounded-xl px-4 py-2 mt-3 active:bg-lime-500 text-white'>Empty Cart</button>
+                    </Link>
                 </table>
 
 
@@ -126,7 +130,7 @@ export default function Page() {
                             </tr>
                         </tbody>
                         <Link href='/checkout'>
-                            <button className=' border mt-4 rounded-lg px-4 py-3  w-full self-center bg-lime-600'>
+                            <button className=' border mt-4 rounded-lg px-4 py-3  w-full self-center bg-lime-600 text-white'>
                                 Checkout
                             </button>
                         </Link>

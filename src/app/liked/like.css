@@ -1,8 +1,9 @@
  
 .like-items {
     box-sizing: border-box;
+    padding: 5px;
     padding-top: 25px;
-    padding: 14px;
+    padding-bottom: 25px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
@@ -22,7 +23,7 @@
 
     .like-items {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
     .like-pg {
