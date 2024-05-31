@@ -9,14 +9,13 @@ import Link from 'next/link';
 import { CartContext } from '../../../context/CartContext';
 import './item.css'
 import { SearchContext } from '../../../context/SearchContext';
-import PopUp from '../popUp/PopUp';
 
 export default function Items() {
   const [datatwo, setDatatwo] = useState([])
-  // const [selected, setSelected] = useState(false)
+  const [selected, setSelected] = useState(false)
   const [indexval, setIndexval] = useState(0)
   const {handleAddToCart } = useContext(CartContext)
-  const {handleLiked, setSelected} = useContext(SearchContext)
+  const {handleLiked} = useContext(SearchContext)
 
   async function newData() {
     const res = await fetch('api/products');
@@ -32,48 +31,48 @@ export default function Items() {
     newData()
   }, [])
 
-  // const PopUp = () => {
+  const PopUp = () => {
 
-  //   if (selected) {
-  //     return (
-  //       <div className={`${selected} pop-parent relative`}>
-  //         <div onClick={() => setSelected(false)} className='fixed pop-container flex justify-center items-center'>
-  //           <div className='pop-content relative'>
-  //             <div onClick={() => setSelected(false)} className={`${selected} nunitoextralight_italicextralight_italic close-pop absolute text-lg font-semibold`}>x</div>
-  //             <p className=' mb-5 text-center font-semibold text-xs text-green-600 '>Successfully added to cart</p>
-  //             <div className='flex'>
-  //               <section className=' pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2'>
-  //                 <div className='box-border overflow-hidden rounded-md'>
-  //                   <Image src={indexval?.img} alt='cart item' height={300} width={300} />
-  //                 </div>
-  //                 <div className='flex flex-col justify-center gap-3'>
-  //                   <h1 className='text-base font-semibold '>{indexval?.title.slice(0, 26)}</h1>
-  //                   <h2 className='text-base font-semibold text-red-600'>{indexval?.price}</h2>
-  //                   <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
-  //                 </div>
-  //               </section>
-  //               <section className=' pop-sec1 flex flex-col justify-center items-center gap-4'>
-  //                 <Link href='/checkout' className='w-11/12'>
-  //                   <button className=' rounded-md font-semibold text-sm py-2 w-full  bg-lime-600 text-white active:bg-orange-500'>Checkout</button>
-  //                 </Link>
-  //                 <Link className='w-11/12 ' href='/cart'>
-  //                   <button className='  rounded-md text-base w-full  bg-slate-100 py-2 nunitoextralight_italicextralight_italic active:bg-orange-500' >View cart</button>
-  //                 </Link>
-  //                 <button className='  rounded-md text-base w-11/12 nunitoextralight_italicextralight_italic  py-2 bg-slate-100 active:bg-orange-500  ' onClick={() => setSelected(false)}>continue shoping</button>
-  //               </section>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     )
-  //   }
-  // }
+    if (selected) {
+      return (
+        <div className={`${selected} pop-parent relative`}>
+          <div onClick={() => setSelected(false)} className='fixed pop-container flex justify-center items-center'>
+            <div className='pop-content relative'>
+              <div onClick={() => setSelected(false)} className={`${selected} nunitoextralight_italicextralight_italic close-pop absolute text-lg font-semibold`}>x</div>
+              <p className=' mb-5 text-center font-semibold text-xs text-green-600 '>Successfully added to cart</p>
+              <div className='flex'>
+                <section className=' pop-sec1 flex justify-center items-center gap-5 box-border overflow-hidden p-1 border-r-2'>
+                  <div className='box-border overflow-hidden rounded-md'>
+                    <Image src={indexval?.img} alt='cart item' height={300} width={300} />
+                  </div>
+                  <div className='flex flex-col justify-center gap-3'>
+                    <h1 className='text-base font-semibold '>{indexval?.title.slice(0, 26)}</h1>
+                    <h2 className='text-base font-semibold text-red-600'>{indexval?.price}</h2>
+                    <span className='flex gap-2'><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></span>
+                  </div>
+                </section>
+                <section className=' pop-sec1 flex flex-col justify-center items-center gap-4'>
+                  <Link href='/checkout' className='w-11/12'>
+                    <button className=' rounded-md font-semibold text-sm py-2 w-full  bg-lime-600 text-white active:bg-orange-500'>Checkout</button>
+                  </Link>
+                  <Link className='w-11/12 ' href='/cart'>
+                    <button className='  rounded-md text-base w-full  bg-slate-100 py-2 nunitoextralight_italicextralight_italic active:bg-orange-500' >View cart</button>
+                  </Link>
+                  <button className='  rounded-md text-base w-11/12 nunitoextralight_italicextralight_italic  py-2 bg-slate-100 active:bg-orange-500  ' onClick={() => setSelected(false)}>continue shoping</button>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
 
 
 
   return (
     <div className='detail-ex'>
-      <PopUp data={indexval}/>
+      {PopUp()}
       {
         datatwo?.slice(0, 5).map((item, index) => {
           return (
@@ -91,7 +90,7 @@ export default function Items() {
               </h1>
               <h1 className=' text-orange-500 text-lg font-bold '>${item.price}</h1>
               <button onClick={() => { handleAddToCart(item); setIndexval(item); setSelected(true) }} className=' btn-bg text-sm  nunitoextralight_italicextralight_italic font-semibold  bg-neutral-100 px-9 py-3 rounded-lg'>ADD TO CART</button>
-              <GiSelfLove className='absolute top-4 right-3 trans1 active:bg-orange-500 active:text-white' size={35} onClick={()=> handleLiked(item)} />
+              <GiSelfLove className='absolute top-4 right-3 trans1' size={35} onClick={()=> handleLiked(item)} />
               <SiHiveBlockchain className=' absolute top-12 mt-2 right-3 trans2' size={35} />
               <IoSearchOutline className=' absolute top-24   right-3 trans3' size={35} />
             </div>

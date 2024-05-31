@@ -44,14 +44,12 @@ export const CartProvider = ({ children }) => {
         
     }
 
-    
+     
     const emptyCart = ()=>{
         localStorage.removeItem('cartItems');
     }
  
-
-
-    useEffect(() => {
+ useEffect(() => {
         setCartItems(JSON.parse(localStorage.getItem('cartItems')));
         forceUpdate(cartItems)
     }, [])
@@ -62,7 +60,6 @@ export const CartProvider = ({ children }) => {
         </CartContext.Provider>
     )
 }
-
 
 // function handleAddToCart(getCurrentItem) {
 //     const carts = cartItems ?? []
