@@ -13,11 +13,11 @@ export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]) 
 
     function handleAddToCart(getCurrentItem, qty, placeIndex) {
-        forceUpdate();
+        forceUpdate()
         let cart = cartItems ?? []
         let idProduct = getCurrentItem?._id
-        let price = getCurrentItem?.price
-        let title = getCurrentItem?.title
+        let price = getCurrentItem.price
+        let title = getCurrentItem.title
         let position = cart?.findIndex(value => value.product_id === idProduct);
         console.log(position)
         console.log(placeIndex);
@@ -41,25 +41,28 @@ export const CartProvider = ({ children }) => {
         }  
         
         localStorage.setItem('cartItems', JSON.stringify(cart));
-        
-    }
+        setCartItems(cart);
 
-     
+    }
+ 
     const emptyCart = ()=>{
         localStorage.removeItem('cartItems');
     }
  
- useEffect(() => {
+
+
+    useEffect(() => {
         setCartItems(JSON.parse(localStorage.getItem('cartItems')));
         forceUpdate(cartItems)
     }, [])
 
     return (
-        <CartContext.Provider value={{ cartItems, emptyCart, handleAddToCart, forceUpdate }}>
+        <CartContext.Provider value={{ cartItems, emptyCart, handleAddToCart, forceUpdate}}>
             {children}
         </CartContext.Provider>
     )
 }
+
 
 // function handleAddToCart(getCurrentItem) {
 //     const carts = cartItems ?? []
