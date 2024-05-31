@@ -38,7 +38,7 @@ export default function Hero() {
   const { handleAddToCart} = useContext(CartContext)
   const {handleLiked} = useContext(SearchContext)
   const [selected, setSelected] = useState(false)
-  const [indexval, setIndexval] = useState(0)
+  const [indexval, setIndexval] = useState([])
 
 
   const [dataone, setDataone] = useState([])

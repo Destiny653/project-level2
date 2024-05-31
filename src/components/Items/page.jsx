@@ -13,7 +13,7 @@ import { SearchContext } from '../../../context/SearchContext';
 export default function Items() {
   const [datatwo, setDatatwo] = useState([])
   const [selected, setSelected] = useState(false)
-  const [indexval, setIndexval] = useState(0)
+  const [indexval, setIndexval] = useState([])
   const {handleAddToCart } = useContext(CartContext)
   const {handleLiked} = useContext(SearchContext)
 
