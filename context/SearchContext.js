@@ -26,6 +26,10 @@ export default function SearchProvider({children}) {
       localStorage.setItem('love', JSON.stringify(All));
       setLove(All);
   }
+
+  const emptyLike = ()=>{
+   localStorage.removeItem('love');
+}
     
 
   
@@ -37,7 +41,7 @@ export default function SearchProvider({children}) {
 
 
   return (
-     <SearchContext.Provider value={{store, store2, touched, love, selected, setSelected, handleLiked, setTouched, setStore, setStore2}}>
+     <SearchContext.Provider value={{store, store2, touched, love, selected,emptyLike, setSelected, handleLiked, setTouched, setStore, setStore2}}>
         {children}
      </SearchContext.Provider>
   )

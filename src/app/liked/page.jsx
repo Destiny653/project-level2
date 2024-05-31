@@ -8,14 +8,14 @@ import { SearchContext } from '../../../context/SearchContext';
 
 
 export default function Like() {
- 
-    const {love} = useContext(SearchContext)
+
+    const { love, emptyLike } = useContext(SearchContext)
     console.log(love);
 
     return (
         <>
             <div className='nunitoextralight_italic like-items'>
-                { !love == [] ?
+                {!love == [] ?
                     love?.map((value, index) => {
                         return (
                             <li key={index} onClick={() => setMainindex(index)} className='like-item flex box-border border p-5 gap-4'>
@@ -41,6 +41,9 @@ export default function Like() {
                     :
                     <h1 className='nunitoextralight_italic like-pg'>You have no liked item</h1>
                 }
+
+                <button onClick={() => emptyLike()} className=' bg-orange-400 rounded-xl px-4 py-2 mt-3 active:bg-lime-500 text-white'>Empty Cart</button>
+
             </div>
         </>
     )
