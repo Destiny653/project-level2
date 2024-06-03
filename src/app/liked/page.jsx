@@ -42,7 +42,7 @@ export default function Like() {
                     <h1 className='nunitoextralight_italic like-pg'>You have no liked item</h1>
                 }
 
-                <button onClick={() => emptyLike()} className=' bg-orange-400 rounded-xl px-4 py-2 mt-3 active:bg-lime-500 text-white'>Empty Cart</button>
+                <button onClick={() => emptyLike()} className=' bg-orange-400 rounded-xl px-4 py-2 mt-3 active:bg-lime-500 text-white'>Empty list</button>
 
             </div>
         </>
