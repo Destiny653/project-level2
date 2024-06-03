@@ -56,8 +56,9 @@ export default function Page() {
                         <tr>
                             <th className='text-left'>Image</th>
                             <th className='cart-title text-left'>Name</th>
-                            <th className='text-left'>Sum</th>
+                            <th className='text-left'>unit</th>
                             <th className='text-left'>Qty</th>
+                            <th className='text-left'>Sum</th>
                             <th className='text-left'>Cut</th>
                         </tr>
                     </thead>
