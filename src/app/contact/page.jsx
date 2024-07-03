@@ -11,6 +11,10 @@ import './contact.css';
 const Page = () => {
 
     const {mode} = useContext(ThemeContext)
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [contact, setContact] = useState('')
+    const [text, setText] = useState('')
 
 
     const form = useRef()
@@ -19,9 +23,12 @@ const Page = () => {
     const handleEmail = (e) => {
 
         e.preventDefault()
-        const name = e.target.name.value
-        form.current.value = ""
-        console.log(name);
+
+         setName('')
+         setEmail('')
+         setContact('')
+         setText('')
+         
         emailjs.sendForm('service_yok3ejb', 'template_njb1bre', form.current, {
             publicKey: 'ie3XvRbY2rSalRh40',
         }).then((res) => {
@@ -47,16 +54,16 @@ const Page = () => {
             <div className={`container-small`} style={mode == 'light' ? {color:'black'} : {color:'black'}}>
                 <form className={`form-small`} ref={form} onSubmit={handleEmail} action='' method='post'>
                     <label className={`lebel-small`}>
-                        <input className={`input-small`} type="text" name='name' ref={form} placeholder="Name" />
+                        <input className={`input-small`} value={name} onChange={e=>setName(e.target.value)} type="text" name='name' ref={form} placeholder="Name" />
                     </label>
                         <label className={`lebel-small w-full`}>
-                            <input className={`input-small w-full`} type="email" name='email' ref={form} placeholder="ex = name@gmail.com" />
+                            <input className={`input-small w-full`} value={email} onChange={e=>setEmail(e.target.value)} type="email" name='email' ref={form} placeholder="ex = name@gmail.com" />
                         </label>
                         <label className={`lebel-small w-full`}>
-                            <input className={`input-small`} type="tel" name='phone' ref={form} placeholder='Phone number' />
+                            <input className={`input-small`} value={contact} onChange={e=>setContact(e.target.value)} type="tel" name='phone' ref={form} placeholder='Phone number' />
                         </label>
                     <label className={`lebel-small`}>
-                        <textarea className={`input-samll`} name="message" id="textArea" ref={form} cols="6" rows="4" placeholder='Your message'></textarea>
+                        <textarea className={`input-samll`} value={text} onChange={e=>setText(e.target.value)} name="message" id="textArea" ref={form} cols="6" rows="4" placeholder='Your message'></textarea>
                     </label>
                     <button className={`button-small`}>Send</button>
                 </form>
