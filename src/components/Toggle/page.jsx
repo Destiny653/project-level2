@@ -21,7 +21,6 @@ export default function Toggle() {
     const links = [
         {name: 'Home', href: '/'},
         {name: 'Checkout', href: '/checkout' },
-        {name: 'Dashboard', href: '/dashboard/posts'},
         {name: 'Login', href: '/login' },
         {name: 'Register', href: '/register'},
         {name: 'Cart', href: '/cart'},
