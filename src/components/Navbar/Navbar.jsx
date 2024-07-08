@@ -58,7 +58,7 @@ export default function NavBar() {
                     </select>  
                     <div className='relative inline'>
                         <span onClick={() => setSeacrchValue(" ")} className='absolute right-1  top-0.5 text-black text-sm rounded-full font-semibold bg-slate-100 px-1.5 py-0 hover:bg-amber-500 cursor-pointer'>x</span>
-                        <input value={searchValue} onChange={(e) => setSeacrchValue(e.target.value)} type="text" placeholder="Search Item..." className=" border border-lime-400 text w-2/4 h-12 px-3 py-5 " />
+                        <input value={searchValue} onChange={(e) => setSeacrchValue(e.target.value)} type="text" placeholder="Search Item..." className=" border border-lime-400 text-black text w-2/4 h-12 px-3 py-5 " />
                     </div>
                     <input type="button" value="Search" onClick={() => navigation.push('/products')} className="home-input-btn-r text align-top h-12 w-3/12 " />
                 </div>
