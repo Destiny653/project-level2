@@ -70,7 +70,7 @@ export default function Page() {
                                 let info = newCart[position]
                                 let Add = item.quantity
 
-                                totalPrice += item.price * item.quantity
+                                totalPrice += info?.price * Add
 
                                 console.log(totalPrice);
                                 return (

@@ -5,7 +5,7 @@ const { createContext, useState, useEffect, useReducer } = require("react");
 
 export const CartContext = createContext(null)
 
-export const CartProvider = ({ children }) => {
+export  const CartProvider = ({ children }) => {
 
 
 //force reload of page
