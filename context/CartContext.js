@@ -22,7 +22,7 @@ export  const CartProvider = ({ children }) => {
         console.log(position)
         console.log(placeIndex);
         let quantity = qty ? cartItems[position].quantity - 1 : (position < 0 ? 1 : cartItems[position].quantity + 1)
-        if (placeIndex) {
+        if (placeIndex || placeIndex === 0) {
             cart.splice(position,1)
         } else {
             if (quantity <= 0) {
